@@ -2,7 +2,7 @@ function header() {
   return (
     <header>
       <div className="bg-stone-800 text-gray-100 text-xs">
-        <div className="container mx-auto px-4 flex justify-between items-center">
+        <div className="mx-auto max-w-screen-xl px-4 flex justify-between items-center">
           <ul className="flex gap-4">
             <li>✔ Fri frakt</li>
             <li>✔ 30 dagars öppet köp</li>
@@ -25,7 +25,7 @@ function header() {
         </div>
       </div>
       <div className="border-b border-stone-300 text-sm">
-        <div className="container px-4 py-2 mx-auto flex gap-8 items-center">
+        <div className="mx-auto max-w-screen-xl px-4 py-2 flex gap-8 items-center">
           <a href="#">
             <h1 className="text-4xl font-semibold">💿inet</h1>
           </a>
@@ -49,7 +49,7 @@ function header() {
         </div>
       </div>
       <div className="border-b border-stone-300 bg-white text-sm">
-        <div className="container mx-auto px-4 flex justify-between">
+        <div className="mx-auto max-w-screen-xl px-4 flex justify-between">
           <ul className="flex gap-6">
             <li>
               <a className="py-4 block" href="#">

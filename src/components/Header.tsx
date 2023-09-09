@@ -1,7 +1,7 @@
 function header() {
   return (
     <header>
-      <div className="bg-stone-800 text-gray-100 text-xs">
+      <div className="text-gray-800 text-sm">
         <div className="mx-auto max-w-screen-xl px-4 flex justify-between items-center">
           <ul className="flex gap-4">
             <li>✔ Fri frakt</li>
@@ -15,7 +15,7 @@ function header() {
               <div className="cursor-pointer relative bg-stone-500 rounded-full w-8 h-4 after:bg-stone-200 after:h-3 after:aspect-square after:left-[2px] after:top-[2px] after:rounded-full after:block after:absolute"></div>
               🌛
             </div>
-            <div className="flex gap-3 border-l py-2 pl-4 border-stone-700 items-center">
+            <div className="flex gap-3 py-4 pl-4 items-center">
               <a href="#">Privatperson</a> <span className="-mt-[2px]">|</span>{" "}
               <a href="#" className="text-stone-500">
                 Företag
@@ -24,12 +24,12 @@ function header() {
           </div>
         </div>
       </div>
-      <div className="border-b border-stone-300 text-sm">
-        <div className="mx-auto max-w-screen-xl px-4 py-2 flex gap-8 items-center">
+      <div className="border-b border-stone-200 text-sm">
+        <div className="mx-auto max-w-screen-xl px-4 pt-4 pb-6 flex gap-8 items-center">
           <a href="#">
             <h1 className="text-4xl font-semibold">💿inet</h1>
           </a>
-          <div className="px-3 py-2 flex gap-3 border border-stone-300 bg-white focus-within:outline outline-1 flex-grow">
+          <div className="shadow-md rounded-md px-3 py-2 flex gap-3 border border-stone-200 bg-white focus-within:outline outline-1 flex-grow">
             <span>🔍</span>
             <input
               type="text"
@@ -43,12 +43,15 @@ function header() {
             </span>{" "}
             Min sida
           </a>
-          <a href="#" className="bg-green-600 px-4 py-2 rounded-sm text-white">
+          <a
+            href="#"
+            className="rounded-md shadow-md bg-green-600 px-4 py-2 text-white"
+          >
             🛒 Kundvagn
           </a>
         </div>
       </div>
-      <div className="border-b border-stone-300 bg-white text-sm">
+      <div className="bg-white text-sm shadow-lg">
         <div className="mx-auto max-w-screen-xl px-4 flex justify-between">
           <ul className="flex gap-6">
             <li>

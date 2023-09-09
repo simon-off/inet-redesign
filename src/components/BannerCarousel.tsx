@@ -31,15 +31,15 @@ function BannerCarousel() {
   };
 
   return (
-    <section className="h-[240px] bg-stone-400 relative flex justify-center items-center overflow-hidden">
+    <section className="h-[240px] rounded-md bg-stone-400 relative flex justify-center items-center overflow-hidden">
       {banners.map(
         (word, i) =>
           i === page && (
-            <div className="w-full h-full relative">
+            <div className="w-full h-full relative" key={i}>
               <div className="absolute -translate-x-full bg-teal-800 grid place-items-center w-full h-full">
                 {banners[i <= 0 ? banners.length - 1 : i - 1]}
               </div>
-              <div className="absolute text-white text-8xl uppercase font-black bg-gradient-to-t from-stone-700 to-stone-500 grid place-items-center w-full h-full">
+              <div className="absolute text-white text-8xl uppercase font-black bg-gradient-to-t from-stone-400 to-stone-600 grid place-items-center w-full h-full">
                 {word}
               </div>
               <div className="absolute translate-x-full bg-teal-700 grid place-items-center w-full h-full">
@@ -50,22 +50,22 @@ function BannerCarousel() {
       )}
       <button
         onClick={leftButtonHandler}
-        className="absolute h-full top-0 left-0 hover:bg-black hover:bg-opacity-10 p-4 text-2xl"
+        className="text-white absolute h-full top-0 left-0 hover:bg-black hover:bg-opacity-10 p-4 text-2xl"
       >
-        ◀
+        👈
       </button>
       <button
         onClick={rightButtonHandler}
-        className="absolute h-full top-0 right-0 hover:bg-black hover:bg-opacity-10 p-4 text-2xl"
+        className="text-white absolute h-full top-0 right-0 hover:bg-black hover:bg-opacity-10 p-4 text-2xl"
       >
-        ▶
+        👉
       </button>
-      <div className="flex gap-2 absolute bottom-4">
+      <div className="flex gap-3 absolute bottom-4">
         {banners.map((_, i) =>
           i === page ? (
-            <PageButton i={i} active={true} setPage={setPage} />
+            <PageButton key={i} i={i} active={true} setPage={setPage} />
           ) : (
-            <PageButton i={i} active={false} setPage={setPage} />
+            <PageButton key={i} i={i} active={false} setPage={setPage} />
           )
         )}
       </div>

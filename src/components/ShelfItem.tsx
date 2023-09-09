@@ -1,24 +1,26 @@
-interface IProps {
-  title?: string;
-  description?: string;
-  price?: number;
-  link?: string;
-  isProduct?: boolean;
-}
+import IProduct from "../types/IProduct";
 
-function ShelfItem(props: IProps) {
+function ShelfItem({ product }: { product: IProduct }) {
   return (
-    <article className="border border-r-0 bg-white p-1 snap-start h-full flex flex-col">
-      <div className="bg-gradient-to-br from-stone-400 to-stone-300 h-36"></div>
-      <div className="p-2">
-        <h2 className="font-semibold leading-tight pb-2">{props.title}</h2>
-        <p className="text-xs">{props.description}</p>
+    <article className="text-stone-800 border border-r-0 rounded-lg shadow-md overflow-hidden bg-white snap-start h-full flex flex-col">
+      <div className="bg-gradient-to-br from-stone-400 to-stone-100 h-36 p-2">
+        <img
+          src={`images/${product.image}`}
+          alt={product.name}
+          className="h-full mx-auto"
+        />
       </div>
-      <div className="px-2 pb-2 mt-auto flex justify-between items-center">
+      <div className="p-4">
+        <h2 className="font-semibold leading-tight pb-4 text-stone-950">
+          {product.name}
+        </h2>
+        <p className="text-xs">{product.description}</p>
+      </div>
+      <div className="px-4 pb-4 mt-auto flex justify-between items-center">
         <span className="font-bold">
-          {props.price} {props.price && "kr"}
+          {product.price} {product.price && "kr"}
         </span>
-        <button className="border border-stone-500 p-1 rounded-sm">🛒</button>
+        <button className="">🛒</button>
       </div>
     </article>
   );

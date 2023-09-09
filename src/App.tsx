@@ -7,11 +7,26 @@ function App() {
   return (
     <>
       <Header />
-      <main className="max-w-screen-xl mx-auto px-4 py-2 flex flex-col gap-4">
+      <main className="max-w-screen-xl mx-auto px-4 py-8 flex flex-col gap-8">
         <BannerCarousel />
-        <ItemShelf heading="Kampanjer" link="#" />
-        <ItemShelf heading="Andra grejer" link="#" />
-        <ItemShelf heading="Bra skit" link="#" />
+        <ItemShelf
+          heading="Kampanjer"
+          link="#"
+          visibleItems={5}
+          fetchURL="mock-products.json"
+        />
+        <ItemShelf
+          heading="Stoff osv"
+          link="#"
+          visibleItems={4}
+          fetchURL="mock-products.json"
+        />
+        <ItemShelf
+          heading="Bra skit"
+          link="#"
+          visibleItems={6}
+          fetchURL="mock-products.json"
+        />
       </main>
     </>
   );

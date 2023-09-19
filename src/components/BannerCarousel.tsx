@@ -50,13 +50,13 @@ function BannerCarousel() {
       )}
       <button
         onClick={leftButtonHandler}
-        className="text-white absolute h-full top-0 left-0 hover:bg-black hover:bg-opacity-10 p-4 text-2xl"
+        className="absolute left-2 top-2 bottom-2 p-4 text-xl rounded-lg opacity-30 transition-colors hover:bg-black hover:opacity-100 hover:bg-opacity-30"
       >
         👈
       </button>
       <button
         onClick={rightButtonHandler}
-        className="text-white absolute h-full top-0 right-0 hover:bg-black hover:bg-opacity-10 p-4 text-2xl"
+        className="absolute right-2 top-2 bottom-2 p-4 text-xl rounded-lg opacity-30 transition-colors hover:bg-black hover:opacity-100 hover:bg-opacity-30"
       >
         👉
       </button>

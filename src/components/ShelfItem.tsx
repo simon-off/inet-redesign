@@ -11,10 +11,10 @@ function ShelfItem({ product }: { product: IProduct }) {
         />
       </div>
       <div className="p-4">
-        <h2 className="font-semibold leading-tight pb-4 text-stone-950">
+        <h2 className="font-semibold leading-tight line-clamp-2 mb-2 text-stone-950">
           {product.name}
         </h2>
-        <p className="text-xs">{product.description}</p>
+        <p className="text-sm">{product.description}</p>
       </div>
       <div className="px-4 pb-4 mt-auto flex justify-between items-center">
         <span className="font-bold">

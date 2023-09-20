@@ -15,7 +15,7 @@ function PageButton({
     <div
       onClick={() => setPage(i)}
       className={`${active ? "bg-white bg-opacity-100" : "bg-black"}
-        cursor-pointer rounded-full bg-opacity-75 border w-4 h-4`}
+        h-4 w-4 cursor-pointer rounded-full border bg-opacity-75`}
     ></div>
   );
 }
@@ -31,18 +31,18 @@ function BannerCarousel() {
   };
 
   return (
-    <section className="h-[240px] rounded-md bg-stone-400 relative flex justify-center items-center overflow-hidden">
+    <section className="relative flex h-[240px] items-center justify-center overflow-hidden rounded-md bg-stone-400">
       {banners.map(
         (word, i) =>
           i === page && (
-            <div className="w-full h-full relative" key={i}>
-              <div className="absolute -translate-x-full bg-teal-800 grid place-items-center w-full h-full">
+            <div className="relative h-full w-full" key={i}>
+              <div className="absolute grid h-full w-full -translate-x-full place-items-center bg-teal-800">
                 {banners[i <= 0 ? banners.length - 1 : i - 1]}
               </div>
-              <div className="absolute text-white text-8xl uppercase font-black bg-gradient-to-t from-stone-400 to-stone-600 grid place-items-center w-full h-full">
+              <div className="absolute grid h-full w-full place-items-center bg-gradient-to-t from-stone-400 to-stone-600 text-8xl font-black uppercase text-white">
                 {word}
               </div>
-              <div className="absolute translate-x-full bg-teal-700 grid place-items-center w-full h-full">
+              <div className="absolute grid h-full w-full translate-x-full place-items-center bg-teal-700">
                 {banners[i >= banners.length - 1 ? 0 : i + 1]}
               </div>
             </div>
@@ -50,17 +50,17 @@ function BannerCarousel() {
       )}
       <button
         onClick={leftButtonHandler}
-        className="absolute left-2 top-2 bottom-2 p-4 text-xl rounded-lg opacity-30 transition-colors hover:bg-black hover:opacity-100 hover:bg-opacity-30"
+        className="absolute bottom-2 left-2 top-2 rounded-lg p-4 text-xl opacity-30 transition-colors hover:bg-black hover:bg-opacity-30 hover:opacity-100"
       >
         👈
       </button>
       <button
         onClick={rightButtonHandler}
-        className="absolute right-2 top-2 bottom-2 p-4 text-xl rounded-lg opacity-30 transition-colors hover:bg-black hover:opacity-100 hover:bg-opacity-30"
+        className="absolute bottom-2 right-2 top-2 rounded-lg p-4 text-xl opacity-30 transition-colors hover:bg-black hover:bg-opacity-30 hover:opacity-100"
       >
         👉
       </button>
-      <div className="flex gap-3 absolute bottom-4">
+      <div className="absolute bottom-4 flex gap-3">
         {banners.map((_, i) =>
           i === page ? (
             <PageButton key={i} i={i} active={true} setPage={setPage} />

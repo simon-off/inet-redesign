@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Header />
-      <main className="max-w-screen-xl mx-auto px-4 py-8 flex flex-col gap-8">
+      <main className="mx-auto flex max-w-screen-xl flex-col gap-8 px-4 py-8">
         <BannerCarousel />
         <ItemShelf
           heading="Kampanjer"

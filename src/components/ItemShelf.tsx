@@ -47,17 +47,17 @@ function ItemShelf(props: IProps) {
 
   if (loading) {
     return (
-      <section className="bg-white rounded-md p-4 shadow-sm">
-        <h2 className="font-semibold pb-2">Loading...</h2>
+      <section className="rounded-md bg-white p-4 shadow-sm">
+        <h2 className="pb-2 font-semibold">Loading...</h2>
       </section>
     );
   }
 
   if (error && error instanceof Error) {
     return (
-      <section className="bg-white rounded-md p-4 shadow-sm">
-        <h2 className="text-red-700 font-semibold pb-2">Could not fetch the correct data...</h2>
-        <p className="text-stone-700 text-sm">{JSON.stringify(error.message)}</p>
+      <section className="rounded-md bg-white p-4 shadow-sm">
+        <h2 className="pb-2 font-semibold text-red-700">Could not fetch the correct data...</h2>
+        <p className="text-sm text-stone-700">{JSON.stringify(error.message)}</p>
       </section>
     );
   }
@@ -65,19 +65,19 @@ function ItemShelf(props: IProps) {
   if (data)
     return (
       <section>
-        <div className="flex justify-between items-center gap-4 pb-2 text-stone-500">
+        <div className="flex items-center justify-between gap-4 pb-2 text-stone-500">
           <a href={props.link}>
-            <h2 className="uppercase font-semibold  hover:text-blue-500">{props.heading}</h2>
+            <h2 className="font-semibold uppercase  hover:text-blue-500">{props.heading}</h2>
           </a>
           <div className="h-[1px] flex-1 bg-stone-300"></div>
-          <a href={props.link} className="underline text-sm">
+          <a href={props.link} className="text-sm underline">
             Visa alla
           </a>
         </div>
         <div className="relative">
           <div
             ref={scrollRef}
-            className="grid grid-flow-col gap-[12px] snap-x items-center overflow-x-auto"
+            className="grid snap-x grid-flow-col items-center gap-[12px] overflow-x-auto"
             style={{
               gridAutoColumns: `calc((${100 / props.visibleItems}% - 12px) + (12px / ${props.visibleItems}))`,
               scrollbarWidth: "none",
@@ -85,9 +85,9 @@ function ItemShelf(props: IProps) {
           >
             <button
               onClick={() => scrollButtonHandler(-1)}
-              className={`absolute left-2 top-2 bottom-2 p-4 text-xl rounded-lg opacity-30 transition-colors ${
+              className={`absolute bottom-2 left-2 top-2 rounded-lg p-4 text-xl opacity-30 transition-colors ${
                 scrollLocation !== ScrollLocations.Left
-                  ? "opacity-100 bg-black bg-opacity-[0.15] hover:opacity-100 hover:bg-opacity-30"
+                  ? "bg-black bg-opacity-[0.15] opacity-100 hover:bg-opacity-30 hover:opacity-100"
                   : "cursor-default"
               }`}
             >
@@ -95,9 +95,9 @@ function ItemShelf(props: IProps) {
             </button>
             <button
               onClick={() => scrollButtonHandler(1)}
-              className={`absolute right-2 top-2 bottom-2 p-4 text-xl rounded-lg opacity-30 transition-colors ${
+              className={`absolute bottom-2 right-2 top-2 rounded-lg p-4 text-xl opacity-30 transition-colors ${
                 scrollLocation !== ScrollLocations.Right
-                  ? "opacity-100 bg-black bg-opacity-[0.15] hover:opacity-100 hover:bg-opacity-30"
+                  ? "bg-black bg-opacity-[0.15] opacity-100 hover:bg-opacity-30 hover:opacity-100"
                   : "cursor-default"
               }`}
             >

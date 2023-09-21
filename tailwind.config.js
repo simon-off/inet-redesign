@@ -17,6 +17,11 @@ export default {
       yellow: colors.amber,
       pink: colors.fuchsia,
     },
+    fontFamily: {
+      sans: ["inter", "ui-sans-serif", "system-ui"],
+      serif: ["ui-serif", "Georgia"],
+      mono: ["ui-monospace", "SFMono-Regular"],
+    },
   },
   plugins: ["prettier-plugin-tailwindcss"],
 };

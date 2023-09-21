@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function Header() {
   const [darkMode, setDarkMode] = useState(false);
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   const toggleDarkMode = () => {
     if (darkMode) {
@@ -42,14 +43,21 @@ function Header() {
           </div>
         </div>
       </div>
-      <div className="border-b border-stone-200 text-sm">
+      <div className="text-sm">
         <div className="mx-auto flex max-w-screen-xl items-center gap-8 px-4 pb-6 pt-4">
           <a href="#">
-            <h1 className="text-4xl font-semibold">💿inet</h1>
+            <h1 className="font-mono text-4xl font-semibold">
+              <span className="inline-block -translate-y-[2px]">💿</span>
+              <span className="text-[3rem] leading-none">inot</span>
+            </h1>
           </a>
-          <div className="flex flex-grow gap-3 rounded-md border border-stone-200 bg-white px-3 py-2 shadow-md outline-1 focus-within:outline dark:bg-inherit">
+          <div
+            onClick={() => searchInputRef.current?.focus()}
+            className="flex flex-grow gap-3 rounded-md border border-stone-200 bg-white px-3 py-2 shadow-md outline-1 outline-stone-400 focus-within:outline dark:border-stone-600 dark:bg-stone-900"
+          >
             <span>🔍</span>
             <input
+              ref={searchInputRef}
               type="text"
               placeholder="Sök bland 13 157 produkter i 578 kategorier..."
               className="w-full bg-inherit focus:outline-none focus:placeholder:text-stone-500"
@@ -63,7 +71,7 @@ function Header() {
           </a>
         </div>
       </div>
-      <div className="bg-white text-sm shadow-lg">
+      <div className="border-y border-stone-200 bg-white text-sm shadow-lg dark:border-stone-600 dark:bg-stone-700 dark:bg-opacity-50">
         <nav className="mx-auto flex max-w-screen-xl justify-between px-4">
           <ul className="flex gap-6">
             <li>
@@ -105,17 +113,17 @@ function Header() {
           <ul className="flex">
             <li className="px-4">
               <a className="block py-4" href="#">
-                📞 031-65-27-00
+                📞 404-12-55-00
               </a>
             </li>
-            <li className="border-l px-4">
+            <li className="border-l px-4 dark:border-stone-600">
               <a className="block py-4" href="#">
                 💭 Chatt
               </a>
             </li>
-            <li className="border-l pl-4">
+            <li className="border-l pl-4 dark:border-stone-600">
               <a className="block py-4" href="#">
-                📧 info@inet.se
+                📧 info@inot.se
               </a>
             </li>
           </ul>

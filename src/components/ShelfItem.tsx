@@ -8,7 +8,7 @@ function ShelfItem({ product }: { product: IProduct }) {
       </div>
       <div className="p-4">
         <h2 className="mb-2 line-clamp-2 font-semibold leading-tight">{product.name}</h2>
-        <p className="text-sm">{product.description}</p>
+        <p className="text-sm opacity-80">{product.description}</p>
       </div>
       <div className="mt-auto flex items-center justify-between px-4 pb-4">
         <span className="font-mono font-bold">

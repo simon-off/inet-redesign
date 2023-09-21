@@ -60,7 +60,7 @@ function ItemShelf(props: IProps) {
   if (error && error instanceof Error) {
     return (
       <section className="rounded-md bg-white p-4 shadow-sm dark:bg-gray-900">
-        <h2 className="pb-2 text-red-500">Could not fetch the correct data...</h2>
+        <h2 className="text-red-500 pb-2">Could not fetch the correct data...</h2>
         <p className="text-sm opacity-75">{JSON.stringify(error.message)}</p>
       </section>
     );
@@ -69,14 +69,14 @@ function ItemShelf(props: IProps) {
   if (data)
     return (
       <section>
-        <div className="flex items-center justify-between gap-4 pb-2">
+        <div className="flex items-center justify-between gap-4 pb-2 font-mono uppercase">
           <a href={props.link}>
-            <h2 className="font-semibold uppercase opacity-75 hover:text-blue-400 hover:opacity-100">
+            <h2 className="hover:text-blue-400 font-semibold uppercase opacity-80 hover:opacity-100">
               {props.heading}
             </h2>
           </a>
           <div className="h-[1px] flex-1 bg-gray-400 bg-opacity-30"></div>
-          <a href={props.link} className="text-sm underline hover:text-blue-400">
+          <a href={props.link} className="hover:text-blue-400 text-sm underline">
             Visa alla
           </a>
         </div>

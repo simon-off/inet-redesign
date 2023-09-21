@@ -11,7 +11,7 @@ function ShelfItem({ product }: { product: IProduct }) {
         <p className="text-sm">{product.description}</p>
       </div>
       <div className="mt-auto flex items-center justify-between px-4 pb-4">
-        <span className="font-bold">
+        <span className="font-mono font-bold">
           {product.price} {product.price && "kr"}
         </span>
         <button className="">🛒</button>

@@ -4,7 +4,7 @@ import ItemShelf from "./components/ItemShelf";
 
 function App() {
   return (
-    <div className="flex min-h-[100dvh] flex-col bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+    <div className="flex min-h-[100dvh] flex-col bg-gray-100 from-gray-950 to-transparent bg-[auto_100px] bg-no-repeat text-gray-800 dark:bg-gray-900 dark:bg-gradient-to-b dark:text-gray-200">
       <Header />
       <main className="mx-auto flex max-w-screen-xl flex-1 flex-col gap-8 px-4 pb-16 pt-8">
         <BannerCarousel />
@@ -13,7 +13,7 @@ function App() {
         <ItemShelf heading="Bra skit" link="#" visibleItems={6} fetchURL="mock-products.json" />
       </main>
       <footer className="border-t border-gray-200 bg-white py-8 dark:border-gray-700 dark:bg-gray-800">
-        <div className="mx-auto max-w-screen-xl px-4 text-center text-sm">
+        <div className="mx-auto max-w-screen-xl px-4 text-center font-mono text-sm">
           copy and redesign of{" "}
           <a href="inet.se" className="hover:text-blue-400">
             www.inet.se

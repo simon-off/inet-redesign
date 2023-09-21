@@ -7,7 +7,7 @@ export default {
   theme: {
     colors: {
       inherit: "inherit",
-      gray: colors.gray,
+      gray: colors.zinc,
       transparent: "transparent",
       current: "currentColor",
       black: colors.black,
@@ -16,11 +16,12 @@ export default {
       purple: colors.violet,
       yellow: colors.amber,
       pink: colors.fuchsia,
+      blue: colors.blue,
     },
     fontFamily: {
-      sans: ["inter", "ui-sans-serif", "system-ui"],
-      serif: ["ui-serif", "Georgia"],
-      mono: ["ui-monospace", "SFMono-Regular"],
+      sans: ["inter", "sans-serif", "system-ui"],
+      serif: ["serif", "Georgia"],
+      mono: ["JetBrains Mono Variable", "monospace"],
     },
   },
   plugins: ["prettier-plugin-tailwindcss"],

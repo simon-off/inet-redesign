@@ -46,9 +46,9 @@ function Header() {
       <div className="text-sm">
         <div className="mx-auto flex max-w-screen-xl items-center gap-8 px-4 pb-6 pt-4">
           <a href="#">
-            <h1 className="font-mono text-4xl font-semibold">
+            <h1 className="font-mono text-4xl font-black">
               <span className="inline-block -translate-y-[2px] pr-1">💿</span>
-              <span className="font-sans text-[2.75rem]">inot</span>
+              <span className="text-[2.75rem]">inot</span>
             </h1>
           </a>
           <div

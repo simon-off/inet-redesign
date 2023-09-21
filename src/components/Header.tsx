@@ -1,7 +1,21 @@
-function header() {
+import { useState } from "react";
+
+function Header() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    if (darkMode) {
+      document.body.classList.remove("dark");
+      setDarkMode(false);
+    } else {
+      document.body.classList.add("dark");
+      setDarkMode(true);
+    }
+  };
+
   return (
     <header>
-      <div className="text-sm text-gray-800">
+      <div className="text-sm">
         <div className="mx-auto flex max-w-screen-xl items-center justify-between px-4">
           <ul className="flex gap-4">
             <li>✔ Fri frakt</li>
@@ -10,16 +24,20 @@ function header() {
             <li>✔ Order skickas på måndag</li>
           </ul>
           <div className="flex gap-4">
-            <div className="flex items-center gap-2 ">
-              ☀
-              <div className="relative h-4 w-8 cursor-pointer rounded-full bg-stone-500 after:absolute after:left-[2px] after:top-[2px] after:block after:aspect-square after:h-3 after:rounded-full after:bg-stone-200"></div>
-              🌛
+            <div className="flex items-center gap-2">
+              <span className={darkMode ? "grayscale filter" : ""}>☀</span>
+              <button
+                onClick={toggleDarkMode}
+                className={`relative h-4 w-8 cursor-pointer rounded-full bg-stone-500 after:absolute after:top-[2px] after:block after:aspect-square after:h-3 after:rounded-full after:bg-stone-50 after:transition-[left] ${
+                  darkMode ? "after:left-[calc(2rem-2px-0.75rem)]" : "after:left-[2px]"
+                }`}
+              ></button>
+              <span className={!darkMode ? "grayscale filter" : ""}>🌛</span>
             </div>
             <div className="flex items-center gap-3 py-4 pl-4">
-              <a href="#">Privatperson</a> <span className="-mt-[2px]">|</span>{" "}
-              <a href="#" className="text-stone-500">
-                Företag
-              </a>
+              <p>Privatperson</p>
+              <span className="-mt-[2px]">|</span>
+              <p className="text-stone-500">Företag</p>
             </div>
           </div>
         </div>
@@ -29,12 +47,12 @@ function header() {
           <a href="#">
             <h1 className="text-4xl font-semibold">💿inet</h1>
           </a>
-          <div className="flex flex-grow gap-3 rounded-md border border-stone-200 bg-white px-3 py-2 shadow-md outline-1 focus-within:outline">
+          <div className="flex flex-grow gap-3 rounded-md border border-stone-200 bg-white px-3 py-2 shadow-md outline-1 focus-within:outline dark:bg-inherit">
             <span>🔍</span>
             <input
               type="text"
               placeholder="Sök bland 13 157 produkter i 578 kategorier..."
-              className="w-full focus:outline-none focus:placeholder:text-stone-500"
+              className="w-full bg-inherit focus:outline-none focus:placeholder:text-stone-500"
             />
           </div>
           <a href="#" className="flex items-center">
@@ -46,7 +64,7 @@ function header() {
         </div>
       </div>
       <div className="bg-white text-sm shadow-lg">
-        <div className="mx-auto flex max-w-screen-xl justify-between px-4">
+        <nav className="mx-auto flex max-w-screen-xl justify-between px-4">
           <ul className="flex gap-6">
             <li>
               <a className="block py-4" href="#">
@@ -101,10 +119,10 @@ function header() {
               </a>
             </li>
           </ul>
-        </div>
+        </nav>
       </div>
     </header>
   );
 }
 
-export default header;
+export default Header;

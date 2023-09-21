@@ -10,4 +10,4 @@ This project mainly serves as my first venture into using [Tailwind CSS](https:/
 
 ### How?
 
-I've tried to keep my version relatively close to the original design but it's amazing what a few tweaks to border-radiuses and some box-shadows can do to modernize things a bit.
+I've tried to keep my version relatively close to the original design but it's amazing what a few tweaks to border-radiuses and some box-shadows can do to modernize things a bit. All styling is done with tailwind classes.

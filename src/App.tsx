@@ -1,11 +1,10 @@
-import "./App.css";
 import BannerCarousel from "./components/BannerCarousel";
 import Header from "./components/Header";
 import ItemShelf from "./components/ItemShelf";
 
 function App() {
   return (
-    <div className="flex min-h-[100dvh] flex-col bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+    <div className="flex min-h-[100dvh] flex-col bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200">
       <Header />
       <main className="mx-auto flex max-w-screen-xl flex-1 flex-col gap-8 px-4 pb-16 pt-8">
         <BannerCarousel />

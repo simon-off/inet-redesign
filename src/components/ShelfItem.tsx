@@ -2,7 +2,7 @@ import IProduct from "../types/IProduct";
 
 function ShelfItem({ product }: { product: IProduct }) {
   return (
-    <article className="flex h-full snap-start flex-col overflow-hidden rounded-md border border-gray-300 bg-white dark:border-gray-700 dark:bg-gray-800">
+    <article className="flex h-full snap-start flex-col overflow-hidden rounded-md border border-gray-300 bg-white shadow-[inset_0_0_32px_rgba(100,150,200,0.05)] dark:border-gray-700 dark:bg-gray-800">
       <div className="h-48 p-4">
         <img src={`images/${product.image}`} alt={product.name} className="mx-auto h-full" />
       </div>

@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useFetch from "../hooks/useFetch";
 import IProduct from "../types/IProduct";
 import ShelfItem from "./ShelfItem";
@@ -21,12 +21,21 @@ function ItemShelf(props: IProps) {
   const [scrollLocation, setScrollLocation] = useState<ScrollLocations>(ScrollLocations.Left);
   const { data, error, loading } = useFetch(`data/${props.fetchURL}`);
 
+  useEffect(() => {
+    console.log("hej");
+  }, [scrollLocation]);
+
   const scrollButtonHandler = (direction: number) => {
     if (scrollRef.current) {
       const scrollPosition = scrollRef.current.scrollLeft;
       const containerWidth = scrollRef.current.scrollWidth;
       const visibleWidth = scrollRef.current.offsetWidth;
       const scrollAmount = scrollRef.current.querySelector("article")?.offsetWidth ?? 0;
+
+      scrollRef.current.scroll({
+        left: scrollPosition + scrollAmount * direction,
+        behavior: "smooth",
+      });
 
       if (scrollPosition <= scrollAmount) {
         setScrollLocation(ScrollLocations.Left);
@@ -37,27 +46,22 @@ function ItemShelf(props: IProps) {
       }
 
       // TODO: Updates one click behind.
-
-      scrollRef.current.scroll({
-        left: scrollPosition + scrollAmount * direction,
-        behavior: "smooth",
-      });
     }
   };
 
   if (loading) {
     return (
-      <section className="rounded-md bg-white p-4 shadow-sm">
-        <h2 className="pb-2 font-semibold">Loading...</h2>
+      <section className="rounded-md bg-white p-4 shadow-sm dark:bg-gray-900">
+        <h2 className="pb-2">Loading...</h2>
       </section>
     );
   }
 
   if (error && error instanceof Error) {
     return (
-      <section className="rounded-md bg-white p-4 shadow-sm">
-        <h2 className="pb-2 font-semibold text-red-700">Could not fetch the correct data...</h2>
-        <p className="text-sm text-stone-700">{JSON.stringify(error.message)}</p>
+      <section className="rounded-md bg-white p-4 shadow-sm dark:bg-gray-900">
+        <h2 className="pb-2 text-red-500">Could not fetch the correct data...</h2>
+        <p className="text-sm opacity-75">{JSON.stringify(error.message)}</p>
       </section>
     );
   }
@@ -65,12 +69,14 @@ function ItemShelf(props: IProps) {
   if (data)
     return (
       <section>
-        <div className="flex items-center justify-between gap-4 pb-2 text-stone-500">
+        <div className="flex items-center justify-between gap-4 pb-2">
           <a href={props.link}>
-            <h2 className="font-semibold uppercase  hover:text-blue-500">{props.heading}</h2>
+            <h2 className="font-semibold uppercase opacity-75 hover:text-blue-400 hover:opacity-100">
+              {props.heading}
+            </h2>
           </a>
-          <div className="h-[1px] flex-1 bg-stone-300"></div>
-          <a href={props.link} className="text-sm underline">
+          <div className="h-[1px] flex-1 bg-gray-400 bg-opacity-30"></div>
+          <a href={props.link} className="text-sm underline hover:text-blue-400">
             Visa alla
           </a>
         </div>
@@ -85,20 +91,20 @@ function ItemShelf(props: IProps) {
           >
             <button
               onClick={() => scrollButtonHandler(-1)}
-              className={`absolute bottom-2 left-2 top-2 rounded-lg p-4 text-xl opacity-30 transition-colors ${
+              className={`absolute bottom-2 left-2 top-2 rounded-lg p-4 text-xl opacity-30 transition-opacity ${
                 scrollLocation !== ScrollLocations.Left
-                  ? "bg-black bg-opacity-[0.15] opacity-100 hover:bg-opacity-30 hover:opacity-100"
-                  : "cursor-default"
+                  ? "bg-black bg-opacity-30 opacity-100 hover:opacity-100"
+                  : "pointer-events-none"
               }`}
             >
               👈
             </button>
             <button
               onClick={() => scrollButtonHandler(1)}
-              className={`absolute bottom-2 right-2 top-2 rounded-lg p-4 text-xl opacity-30 transition-colors ${
+              className={`absolute bottom-2 right-2 top-2 rounded-lg p-4 text-xl opacity-30 transition-opacity ${
                 scrollLocation !== ScrollLocations.Right
-                  ? "bg-black bg-opacity-[0.15] opacity-100 hover:bg-opacity-30 hover:opacity-100"
-                  : "cursor-default"
+                  ? "bg-black bg-opacity-30 opacity-100 hover:opacity-100"
+                  : "pointer-events-none"
               }`}
             >
               👉

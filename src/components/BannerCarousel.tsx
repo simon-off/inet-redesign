@@ -31,7 +31,7 @@ function BannerCarousel() {
   };
 
   return (
-    <section className="relative flex h-[240px] items-center justify-center overflow-hidden rounded-md bg-stone-400">
+    <section className="relative flex h-[240px] items-center justify-center overflow-hidden rounded-md bg-gray-400">
       {banners.map(
         (word, i) =>
           i === page && (
@@ -39,7 +39,7 @@ function BannerCarousel() {
               <div className="absolute grid h-full w-full -translate-x-full place-items-center bg-teal-800">
                 {banners[i <= 0 ? banners.length - 1 : i - 1]}
               </div>
-              <div className="absolute grid h-full w-full place-items-center bg-gradient-to-t from-stone-400 to-stone-600 text-8xl font-black uppercase text-white">
+              <div className="absolute grid h-full w-full place-items-center bg-gradient-to-t from-gray-400 to-gray-700 text-8xl font-black uppercase text-white">
                 {word}
               </div>
               <div className="absolute grid h-full w-full translate-x-full place-items-center bg-teal-700">

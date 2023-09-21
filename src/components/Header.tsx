@@ -29,7 +29,7 @@ function Header() {
               <span className={darkMode ? "grayscale filter" : ""}>☀</span>
               <button
                 onClick={toggleDarkMode}
-                className={`relative h-4 w-8 cursor-pointer rounded-full bg-stone-500 after:absolute after:top-[2px] after:block after:aspect-square after:h-3 after:rounded-full after:bg-stone-50 after:transition-[left] ${
+                className={`relative h-4 w-8 cursor-pointer rounded-full bg-gray-500 after:absolute after:top-[2px] after:block after:aspect-square after:h-3 after:rounded-full after:bg-gray-50 after:transition-[left] ${
                   darkMode ? "after:left-[calc(2rem-2px-0.75rem)]" : "after:left-[2px]"
                 }`}
               ></button>
@@ -38,7 +38,7 @@ function Header() {
             <div className="flex items-center gap-3 py-4 pl-4">
               <p>Privatperson</p>
               <span className="-mt-[2px]">|</span>
-              <p className="text-stone-500">Företag</p>
+              <p className="text-gray-500">Företag</p>
             </div>
           </div>
         </div>
@@ -53,25 +53,25 @@ function Header() {
           </a>
           <div
             onClick={() => searchInputRef.current?.focus()}
-            className="flex flex-grow gap-3 rounded-md border border-stone-200 bg-white px-3 py-2 shadow-md outline-1 outline-stone-400 focus-within:outline dark:border-stone-600 dark:bg-stone-900"
+            className="flex flex-grow gap-3 rounded-md border border-gray-200 bg-white px-3 py-2 shadow-md outline-1 outline-gray-400 focus-within:outline dark:border-gray-700 dark:bg-gray-950"
           >
             <span>🔍</span>
             <input
               ref={searchInputRef}
               type="text"
               placeholder="Sök bland 13 157 produkter i 578 kategorier..."
-              className="w-full bg-inherit focus:outline-none focus:placeholder:text-stone-500"
+              className="w-full bg-inherit focus:outline-none focus:placeholder:text-gray-500"
             />
           </div>
           <a href="#" className="flex items-center">
-            <span className="mr-2 inline-flex overflow-hidden rounded-full bg-stone-300 text-xl">👷‍♂️</span> Min sida
+            <span className="mr-2 inline-flex overflow-hidden rounded-full bg-gray-300 text-xl">👷‍♂️</span> Min sida
           </a>
           <a href="#" className="rounded-md bg-green-600 px-4 py-2 text-white shadow-md">
             🛒 Kundvagn
           </a>
         </div>
       </div>
-      <div className="border-y border-stone-200 bg-white text-sm shadow-lg dark:border-stone-600 dark:bg-stone-700 dark:bg-opacity-50">
+      <div className="border-y border-gray-200 bg-white text-sm shadow-lg dark:border-gray-700 dark:bg-gray-800">
         <nav className="mx-auto flex max-w-screen-xl justify-between px-4">
           <ul className="flex gap-6">
             <li>
@@ -116,12 +116,12 @@ function Header() {
                 📞 404-12-55-00
               </a>
             </li>
-            <li className="border-l px-4 dark:border-stone-600">
+            <li className="border-l px-4 dark:border-gray-700">
               <a className="block py-4" href="#">
                 💭 Chatt
               </a>
             </li>
-            <li className="border-l pl-4 dark:border-stone-600">
+            <li className="border-l pl-4 dark:border-gray-700">
               <a className="block py-4" href="#">
                 📧 info@inot.se
               </a>

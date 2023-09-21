@@ -1,18 +1,17 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 function Header() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useLocalStorage("darkMode", false);
   const searchInputRef = useRef<HTMLInputElement>(null);
 
-  const toggleDarkMode = () => {
+  useEffect(() => {
     if (darkMode) {
-      document.body.classList.remove("dark");
-      setDarkMode(false);
-    } else {
       document.body.classList.add("dark");
-      setDarkMode(true);
+    } else {
+      document.body.classList.remove("dark");
     }
-  };
+  }, [darkMode]);
 
   return (
     <header>
@@ -28,7 +27,7 @@ function Header() {
             <div className="flex items-center gap-2">
               <span className={darkMode ? "grayscale filter" : ""}>☀</span>
               <button
-                onClick={toggleDarkMode}
+                onClick={() => setDarkMode(!darkMode)}
                 className={`relative h-4 w-8 cursor-pointer rounded-full bg-gray-500 after:absolute after:top-[2px] after:block after:aspect-square after:h-3 after:rounded-full after:bg-gray-50 after:transition-[left] ${
                   darkMode ? "after:left-[calc(2rem-2px-0.75rem)]" : "after:left-[2px]"
                 }`}

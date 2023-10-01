@@ -63,7 +63,10 @@ function Header() {
             />
           </div>
           <a href="#" className="flex items-center">
-            <span className="mr-2 inline-flex overflow-hidden rounded-full bg-gray-300 text-xl">👷‍♂️</span> Min sida
+            <span className="mr-2 inline-flex overflow-hidden rounded-full bg-gray-300 text-xl dark:bg-gray-600">
+              👷‍♂️
+            </span>{" "}
+            Min sida
           </a>
           <a href="#" className="rounded-md bg-green-600 px-4 py-2 text-white shadow-md">
             🛒 Kundvagn

@@ -36,13 +36,13 @@ function BannerCarousel() {
         (word, i) =>
           i === page && (
             <div className="relative h-full w-full" key={i}>
-              <div className="absolute grid h-full w-full -translate-x-full place-items-center bg-teal-800">
+              <div className="bg-teal-800 absolute grid h-full w-full -translate-x-full place-items-center">
                 {banners[i <= 0 ? banners.length - 1 : i - 1]}
               </div>
               <div className="absolute grid h-full w-full place-items-center bg-gradient-to-t from-gray-400 to-gray-700 text-8xl font-black uppercase text-white">
                 {word}
               </div>
-              <div className="absolute grid h-full w-full translate-x-full place-items-center bg-teal-700">
+              <div className="bg-teal-700 absolute grid h-full w-full translate-x-full place-items-center">
                 {banners[i >= banners.length - 1 ? 0 : i + 1]}
               </div>
             </div>

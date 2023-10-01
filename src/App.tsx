@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="flex min-h-[100dvh] flex-col bg-gray-100 from-gray-950 to-transparent bg-[auto_100px] bg-no-repeat text-gray-800 dark:bg-gray-900 dark:bg-gradient-to-b dark:text-gray-200">
       <Header />
-      <main className="mx-auto flex max-w-screen-xl flex-1 flex-col gap-8 px-4 pb-16 pt-8">
+      <main className="mx-auto flex w-full max-w-screen-xl flex-1 flex-col gap-8 px-4 pb-16 pt-8">
         <BannerCarousel />
         <ItemShelf heading="Kampanjer" link="#" visibleItems={5} fetchURL="mock-products.json" />
         <ItemShelf heading="Stoff osv" link="#" visibleItems={4} fetchURL="mock-products.json" />

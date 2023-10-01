@@ -82,5 +82,89 @@
       { "memory": "16 GB, (2 x 8GB)" },
       { "storage": "512 GB" }
     ]
+  },
+  {
+    "name": "MSI Thin GF63 - i5 | 16GB | 512GB | RTX 4050",
+    "description": "Bärbar gamingdator med chassi i borstat aluminium",
+    "text": "MSI Thin GF63 ger en härlig känsla av kvalitet med sin tunna ram och ett chassi i borstat aluminium. Datorn är utrustad med 12:e generationens Intel Core i5 processor, 16GB RAM och nya grafikortet Nvidia RTX 4050 vilket ger dig kraften du behöver för att spela de nyaste spelen. Den snabba skärmen med 144Hz i uppdateringsfrekvens erbjuder en jämn och responsiv spelupplevelse.",
+    "price": 10990,
+    "image": "msi-thin-gf63.webp",
+    "specs": [
+      { "screensize": "15.6 \"" },
+      { "resolution": "1920x1080, (FHD)" },
+      { "processor": "Core i5" },
+      { "memory": "16 GB, (2 x 8GB)" },
+      { "storage": "512 GB" }
+    ]
+  },
+  {
+    "name": "MSI Thin GF63 - i5 | 16GB | 512GB | RTX 4050",
+    "description": "Bärbar gamingdator med chassi i borstat aluminium",
+    "text": "MSI Thin GF63 ger en härlig känsla av kvalitet med sin tunna ram och ett chassi i borstat aluminium. Datorn är utrustad med 12:e generationens Intel Core i5 processor, 16GB RAM och nya grafikortet Nvidia RTX 4050 vilket ger dig kraften du behöver för att spela de nyaste spelen. Den snabba skärmen med 144Hz i uppdateringsfrekvens erbjuder en jämn och responsiv spelupplevelse.",
+    "price": 10990,
+    "image": "msi-thin-gf63.webp",
+    "specs": [
+      { "screensize": "15.6 \"" },
+      { "resolution": "1920x1080, (FHD)" },
+      { "processor": "Core i5" },
+      { "memory": "16 GB, (2 x 8GB)" },
+      { "storage": "512 GB" }
+    ]
+  },
+  {
+    "name": "MSI Thin GF63 - i5 | 16GB | 512GB | RTX 4050",
+    "description": "Bärbar gamingdator med chassi i borstat aluminium",
+    "text": "MSI Thin GF63 ger en härlig känsla av kvalitet med sin tunna ram och ett chassi i borstat aluminium. Datorn är utrustad med 12:e generationens Intel Core i5 processor, 16GB RAM och nya grafikortet Nvidia RTX 4050 vilket ger dig kraften du behöver för att spela de nyaste spelen. Den snabba skärmen med 144Hz i uppdateringsfrekvens erbjuder en jämn och responsiv spelupplevelse.",
+    "price": 10990,
+    "image": "msi-thin-gf63.webp",
+    "specs": [
+      { "screensize": "15.6 \"" },
+      { "resolution": "1920x1080, (FHD)" },
+      { "processor": "Core i5" },
+      { "memory": "16 GB, (2 x 8GB)" },
+      { "storage": "512 GB" }
+    ]
+  },
+  {
+    "name": "MSI Thin GF63 - i5 | 16GB | 512GB | RTX 4050",
+    "description": "Bärbar gamingdator med chassi i borstat aluminium",
+    "text": "MSI Thin GF63 ger en härlig känsla av kvalitet med sin tunna ram och ett chassi i borstat aluminium. Datorn är utrustad med 12:e generationens Intel Core i5 processor, 16GB RAM och nya grafikortet Nvidia RTX 4050 vilket ger dig kraften du behöver för att spela de nyaste spelen. Den snabba skärmen med 144Hz i uppdateringsfrekvens erbjuder en jämn och responsiv spelupplevelse.",
+    "price": 10990,
+    "image": "msi-thin-gf63.webp",
+    "specs": [
+      { "screensize": "15.6 \"" },
+      { "resolution": "1920x1080, (FHD)" },
+      { "processor": "Core i5" },
+      { "memory": "16 GB, (2 x 8GB)" },
+      { "storage": "512 GB" }
+    ]
+  },
+  {
+    "name": "MSI Thin GF63 - i5 | 16GB | 512GB | RTX 4050",
+    "description": "Bärbar gamingdator med chassi i borstat aluminium",
+    "text": "MSI Thin GF63 ger en härlig känsla av kvalitet med sin tunna ram och ett chassi i borstat aluminium. Datorn är utrustad med 12:e generationens Intel Core i5 processor, 16GB RAM och nya grafikortet Nvidia RTX 4050 vilket ger dig kraften du behöver för att spela de nyaste spelen. Den snabba skärmen med 144Hz i uppdateringsfrekvens erbjuder en jämn och responsiv spelupplevelse.",
+    "price": 10990,
+    "image": "msi-thin-gf63.webp",
+    "specs": [
+      { "screensize": "15.6 \"" },
+      { "resolution": "1920x1080, (FHD)" },
+      { "processor": "Core i5" },
+      { "memory": "16 GB, (2 x 8GB)" },
+      { "storage": "512 GB" }
+    ]
+  },
+  {
+    "name": "MSI Thin GF63 - i5 | 16GB | 512GB | RTX 4050",
+    "description": "Bärbar gamingdator med chassi i borstat aluminium",
+    "text": "MSI Thin GF63 ger en härlig känsla av kvalitet med sin tunna ram och ett chassi i borstat aluminium. Datorn är utrustad med 12:e generationens Intel Core i5 processor, 16GB RAM och nya grafikortet Nvidia RTX 4050 vilket ger dig kraften du behöver för att spela de nyaste spelen. Den snabba skärmen med 144Hz i uppdateringsfrekvens erbjuder en jämn och responsiv spelupplevelse.",
+    "price": 10990,
+    "image": "msi-thin-gf63.webp",
+    "specs": [
+      { "screensize": "15.6 \"" },
+      { "resolution": "1920x1080, (FHD)" },
+      { "processor": "Core i5" },
+      { "memory": "16 GB, (2 x 8GB)" },
+      { "storage": "512 GB" }
+    ]
   }
 ]

@@ -3,8 +3,8 @@ import IProduct from "../types/IProduct";
 
 function ShelfItem({ product, index }: { product: IProduct; index: number }) {
   return (
-    <article className="relative flex h-full snap-start flex-col overflow-hidden rounded-md border border-gray-300 bg-white shadow-[inset_0_0_32px_rgba(100,150,200,0.05)] dark:border-gray-700 dark:bg-gray-800">
-      <a href="#" className="group">
+    <article className="relative h-full snap-start flex-col rounded-md border border-gray-300 bg-white shadow-[inset_0_0_32px_rgba(100,150,200,0.05)] dark:border-gray-700 dark:bg-gray-800">
+      <a href="#" className="group flex h-full flex-col rounded-md">
         <div className="h-48 p-4">
           <img src={`images/${product.image}`} alt={product.name} className="mx-auto h-full" />
         </div>

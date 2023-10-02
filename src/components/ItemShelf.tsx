@@ -25,31 +25,30 @@ function ItemShelf(props: IProps) {
   const { data, error, loading } = useFetch(`data/${props.fetchURL}`);
 
   // State and ref for horizontal scrolling functionality
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(document.createElement("div"));
   const [scrollLocation, setScrollLocation] = useState<ScrollLocations>(ScrollLocations.Left);
 
-  const scrollButtonHandler = (direction: number) => {
-    if (!scrollRef.current) return;
+  const handleScrollButtonClick = (direction: number) => {
+    const ref = scrollRef.current;
 
-    const scrollPosition = scrollRef.current.scrollLeft;
-    const totalWidth = scrollRef.current.scrollWidth;
-    const visibleWidth = scrollRef.current.offsetWidth;
-
-    scrollRef.current.scroll({
-      left: scrollPosition + visibleWidth * direction,
+    ref.scroll({
+      left: ref.scrollLeft + ref.offsetWidth * direction,
       behavior: "smooth",
     });
+  };
 
-    if (scrollPosition <= 0) {
+  const handleScroll = () => {
+    const ref = scrollRef.current;
+    const activationPadding = 20;
+
+    if (ref.scrollLeft < activationPadding) {
       setScrollLocation(ScrollLocations.Left);
-    } else if (scrollPosition + visibleWidth >= totalWidth) {
+    } else if (ref.scrollLeft + ref.offsetWidth >= ref.scrollWidth - activationPadding) {
       setScrollLocation(ScrollLocations.Right);
     } else {
       setScrollLocation(ScrollLocations.Middle);
     }
   };
-
-  // TODO: Fix the scrolling...
 
   // RENDERING for error state
   if (error && error instanceof Error) {
@@ -72,7 +71,7 @@ function ItemShelf(props: IProps) {
           <h2 className="link font-semibold uppercase opacity-80 hover:opacity-100">{props.heading}</h2>
         </a>
         <div className="h-[1px] flex-1 bg-gray-400 bg-opacity-30"></div>
-        <a href={props.link} className="link text-sm underline">
+        <a href={props.link} className="link text-sm">
           Visa alla
         </a>
       </div>
@@ -83,6 +82,7 @@ function ItemShelf(props: IProps) {
       ) : (
         <div className="relative">
           <div
+            onScroll={handleScroll}
             ref={scrollRef}
             className={`grid snap-x grid-flow-col items-center overflow-x-scroll`}
             style={{
@@ -92,21 +92,25 @@ function ItemShelf(props: IProps) {
             }}
           >
             <button
-              onClick={() => scrollButtonHandler(-1)}
-              className={`absolute left-2 z-10 rounded-lg p-4 opacity-30 transition-opacity dark:opacity-50 ${
+              tabIndex={-1}
+              disabled={scrollLocation === ScrollLocations.Left}
+              onClick={() => handleScrollButtonClick(-1)}
+              className={`absolute left-2 z-10 rounded-lg bg-gray-950 bg-opacity-20 p-4 opacity-50 transition-opacity duration-500 hover:duration-150 dark:bg-opacity-50 ${
                 scrollLocation === ScrollLocations.Left
-                  ? "pointer-events-none opacity-20"
-                  : "bg-gray-950 bg-opacity-20 hover:opacity-100 dark:bg-opacity-50 hover:dark:opacity-100"
+                  ? "opacity-0 hover:opacity-20 focus-visible:opacity-20"
+                  : "hover:opacity-100 focus-visible:opacity-100"
               }`}
             >
               <StepBack />
             </button>
             <button
-              onClick={() => scrollButtonHandler(1)}
-              className={`absolute right-2 z-10 rounded-lg p-4 opacity-30 transition-opacity dark:opacity-50 ${
+              tabIndex={-1}
+              disabled={scrollLocation === ScrollLocations.Right}
+              onClick={() => handleScrollButtonClick(1)}
+              className={`absolute right-2 z-10 rounded-lg bg-gray-950 bg-opacity-20 p-4 opacity-50 transition-opacity duration-500 hover:duration-150 dark:bg-opacity-50 ${
                 scrollLocation === ScrollLocations.Right
-                  ? "pointer-events-none opacity-20"
-                  : "bg-gray-950 bg-opacity-20 hover:opacity-100 dark:bg-opacity-50 hover:dark:opacity-100"
+                  ? "opacity-0 hover:opacity-20 focus-visible:opacity-20"
+                  : "hover:opacity-100 focus-visible:opacity-100"
               }`}
             >
               <StepForward />

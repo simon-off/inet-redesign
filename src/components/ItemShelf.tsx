@@ -1,13 +1,12 @@
 import { StepForward, StepBack } from "lucide-react";
-import { useRef, useState } from "react";
-import useFetch from "../hooks/useFetch";
-import IProduct from "../types/IProduct";
-import ShelfItem from "./ShelfItem";
+import { ReactNode, useRef, useState } from "react";
 
 interface IProps {
+  children?: ReactNode;
+  error: Error | unknown;
+  loading: boolean;
   heading: string;
   link: string;
-  fetchURL: string;
   visibleItems: number;
 }
 
@@ -20,10 +19,7 @@ enum ScrollLocations {
 // The gap between items in pixels
 const GAP = 12;
 
-function ItemShelf(props: IProps) {
-  // Fetch items to display using custom Fetch Hook
-  const { data, error, loading } = useFetch(`data/${props.fetchURL}`);
-
+export default function ItemShelf(props: IProps) {
   // State and ref for horizontal scrolling functionality
   const scrollRef = useRef<HTMLDivElement>(document.createElement("div"));
   const [scrollLocation, setScrollLocation] = useState<ScrollLocations>(ScrollLocations.Left);
@@ -51,14 +47,19 @@ function ItemShelf(props: IProps) {
     }
   };
 
+  // RETURN if no children
+  if (!props.children) {
+    return null;
+  }
+
   // RENDERING for error state
-  if (error && error instanceof Error) {
+  if (props.error && props.error instanceof Error) {
     return (
       <section>
         <h2 className="pb-2 font-mono font-semibold uppercase opacity-80">Something went wrong</h2>
         <div className="rounded-md bg-white p-4 pb-6 shadow-sm dark:bg-gray-900">
           <h2 className="text-red-500 pb-2">Could not fetch the correct data...</h2>
-          <p className="text-sm opacity-75">{JSON.stringify(error.message)}</p>
+          <p className="text-sm opacity-75">{JSON.stringify(props.error.message)}</p>
         </div>
       </section>
     );
@@ -76,7 +77,7 @@ function ItemShelf(props: IProps) {
           Visa alla
         </a>
       </div>
-      {loading || !data ? (
+      {props.loading ? (
         <div className="min-h-[360px] rounded-md bg-white p-4 shadow-sm dark:bg-gray-900">
           <h2>Loading...</h2>
         </div>
@@ -116,14 +117,10 @@ function ItemShelf(props: IProps) {
             >
               <StepForward />
             </button>
-            {data.map((product: IProduct, i: number) => (
-              <ShelfItem product={product} key={i} index={i} />
-            ))}
+            {props.children}
           </div>
         </div>
       )}
     </section>
   );
 }
-
-export default ItemShelf;

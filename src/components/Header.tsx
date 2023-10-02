@@ -2,7 +2,7 @@ import { Phone, Mail, MessageSquare, Sun, Moon, Check, ShoppingCart, Search, Cpu
 import { useEffect, useRef } from "react";
 import useLocalStorage from "../hooks/useLocalStorage";
 
-function Header() {
+export default function Header() {
   const [darkMode, setDarkMode] = useLocalStorage("darkMode", false);
   const searchInputRef = useRef<HTMLInputElement>(null);
 
@@ -152,5 +152,3 @@ function Header() {
     </header>
   );
 }
-
-export default Header;

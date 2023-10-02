@@ -21,7 +21,7 @@ function PageButton({
   );
 }
 
-function BannerCarousel() {
+export default function BannerCarousel() {
   const [page, setPage] = useState(0);
 
   const leftButtonHandler = () => {
@@ -73,5 +73,3 @@ function BannerCarousel() {
     </section>
   );
 }
-
-export default BannerCarousel;

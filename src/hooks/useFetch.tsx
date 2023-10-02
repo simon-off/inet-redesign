@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import IProduct from "../types/IProduct";
 
-export default function useFetch(url: RequestInfo | URL) {
-  const [data, setData] = useState<IProduct[]>();
-  const [error, setError] = useState<Error | unknown>();
+export default function useFetch<T>(url: RequestInfo | URL) {
+  const [data, setData] = useState<T | null>(null);
+  const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -14,7 +13,11 @@ export default function useFetch(url: RequestInfo | URL) {
         const data = await response.json();
         setData(data);
       } catch (error) {
-        setError(error);
+        if (error instanceof Error) {
+          setError(error);
+        } else {
+          setError(new Error("Unknown error"));
+        }
       } finally {
         setLoading(false);
       }

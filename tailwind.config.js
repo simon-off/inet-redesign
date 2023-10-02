@@ -16,7 +16,7 @@ export default {
       purple: colors.violet,
       yellow: colors.amber,
       pink: colors.fuchsia,
-      blue: colors.blue,
+      blue: colors.sky,
     },
     fontFamily: {
       sans: ["inter", "sans-serif", "system-ui"],

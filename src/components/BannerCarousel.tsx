@@ -1,5 +1,4 @@
 import { StepForward, StepBack } from "lucide-react";
-
 import { useState } from "react";
 
 const banners = ["hej", "hejsan", "tjabba", "tjena", "hallå"];
@@ -16,8 +15,8 @@ function PageButton({
   return (
     <div
       onClick={() => setPage(i)}
-      className={`${active ? "bg-white bg-opacity-100" : "bg-black"}
-        h-4 w-4 cursor-pointer rounded-full border bg-opacity-75`}
+      className={`${active ? "bg-white" : "bg-gray-950 bg-opacity-20 hover:bg-opacity-80"}
+        transition-color h-4 w-4 cursor-pointer rounded-full duration-150`}
     ></div>
   );
 }

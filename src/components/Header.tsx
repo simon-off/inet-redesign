@@ -50,7 +50,9 @@ function Header() {
             <div className="flex items-center gap-3 py-4 pl-4">
               <p>Privatperson</p>
               <span className="-mt-[2px]">|</span>
-              <p className="text-gray-500">Företag</p>
+              <a href="#" className="link text-gray-500">
+                Företag
+              </a>
             </div>
           </div>
         </div>
@@ -75,15 +77,15 @@ function Header() {
               className="w-full bg-inherit focus:outline-none focus:placeholder:text-gray-500"
             />
           </div>
-          <a href="#" className="flex items-center">
-            <span className="mr-2 inline-flex overflow-hidden rounded-full bg-gray-500 p-2 text-xl text-white dark:bg-gray-700">
+          <a href="#" className="link flex items-center">
+            <span className="mr-2">
               <Bot size={20} />
             </span>{" "}
             Min sida
           </a>
           <a
             href="#"
-            className="flex -translate-y-[1px] items-center gap-2 rounded-md bg-gray-500 px-4 py-2 text-white shadow-md  dark:bg-gray-700"
+            className="flex -translate-y-[1px] items-center gap-2 rounded-md bg-green-700 bg-opacity-90 px-4 py-2 text-white shadow-md transition hover:bg-green-600 dark:bg-green-800 dark:hover:bg-green-700"
           >
             <ShoppingCart size={16} /> Kundvagn
           </a>
@@ -93,54 +95,54 @@ function Header() {
         <nav className="mx-auto flex max-w-screen-xl justify-between px-4">
           <ul className="flex gap-6">
             <li>
-              <a className="block py-4" href="#">
+              <a className="link block py-4" href="#">
                 Produkter
               </a>
             </li>
             <li>
-              <a className="block py-4" href="#">
+              <a className="link block py-4" href="#">
                 Datorbyggare
               </a>
             </li>
             <li>
-              <a className="block py-4" href="#">
+              <a className="link block py-4" href="#">
                 Veckans Tips
               </a>
             </li>
             <li>
-              <a className="block py-4" href="#">
+              <a className="link block py-4" href="#">
                 Kampanjer
               </a>
             </li>
             <li>
-              <a className="block py-4" href="#">
+              <a className="link block py-4" href="#">
                 Fyndhörnan
               </a>
             </li>
             <li>
-              <a className="block py-4" href="#">
+              <a className="link block py-4" href="#">
                 Tävling
               </a>
             </li>
             <li>
-              <a className="block py-4" href="#">
+              <a className="link block py-4" href="#">
                 Guider
               </a>
             </li>
           </ul>
           <ul className="flex">
             <li className="px-4">
-              <a className="flex items-center gap-2 py-4" href="#">
+              <a className="link flex items-center gap-2 py-4" href="#">
                 <Phone size={16} /> 404-12-55-00
               </a>
             </li>
             <li className="border-l px-4 dark:border-gray-700">
-              <a className="flex items-center gap-2 py-4" href="#">
+              <a className="link flex items-center gap-2 py-4" href="#">
                 <MessageSquare size={16} className="translate-y-[1px]" /> Chatt
               </a>
             </li>
             <li className="border-l pl-4 dark:border-gray-700">
-              <a className="flex items-center gap-2 py-4" href="#">
+              <a className="link flex items-center gap-2 py-4" href="#">
                 <Mail size={16} /> info@inot.se
               </a>
             </li>

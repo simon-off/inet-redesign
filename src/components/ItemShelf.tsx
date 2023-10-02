@@ -69,10 +69,10 @@ function ItemShelf(props: IProps) {
     <section>
       <div className="flex items-center justify-between gap-4 pb-2 font-mono uppercase">
         <a href={props.link}>
-          <h2 className="font-semibold uppercase opacity-80 hover:text-blue-400 hover:opacity-100">{props.heading}</h2>
+          <h2 className="link font-semibold uppercase opacity-80 hover:opacity-100">{props.heading}</h2>
         </a>
         <div className="h-[1px] flex-1 bg-gray-400 bg-opacity-30"></div>
-        <a href={props.link} className="text-sm underline hover:text-blue-400">
+        <a href={props.link} className="link text-sm underline">
           Visa alla
         </a>
       </div>
@@ -93,20 +93,20 @@ function ItemShelf(props: IProps) {
           >
             <button
               onClick={() => scrollButtonHandler(-1)}
-              className={`absolute bottom-2 left-2 top-2 rounded-lg p-4 opacity-50 transition-opacity ${
+              className={`absolute left-2 z-10 rounded-lg p-4 opacity-30 transition-opacity dark:opacity-50 ${
                 scrollLocation === ScrollLocations.Left
                   ? "pointer-events-none opacity-20"
-                  : "bg-gray-950 bg-opacity-[0.15] hover:opacity-100 dark:bg-opacity-50"
+                  : "bg-gray-950 bg-opacity-20 hover:opacity-100 dark:bg-opacity-50 hover:dark:opacity-100"
               }`}
             >
               <StepBack />
             </button>
             <button
               onClick={() => scrollButtonHandler(1)}
-              className={`absolute bottom-2 right-2 top-2 rounded-lg p-4 opacity-50 transition-opacity ${
+              className={`absolute right-2 z-10 rounded-lg p-4 opacity-30 transition-opacity dark:opacity-50 ${
                 scrollLocation === ScrollLocations.Right
                   ? "pointer-events-none opacity-20"
-                  : "bg-gray-950 bg-opacity-[0.15] opacity-100 hover:opacity-100 dark:bg-opacity-50"
+                  : "bg-gray-950 bg-opacity-20 hover:opacity-100 dark:bg-opacity-50 hover:dark:opacity-100"
               }`}
             >
               <StepForward />

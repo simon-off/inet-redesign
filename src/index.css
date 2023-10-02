@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .link {
+    @apply transition-colors duration-[50ms] hover:text-blue-500;
+  }
+}

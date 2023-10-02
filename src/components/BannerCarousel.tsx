@@ -1,3 +1,5 @@
+import { StepForward, StepBack } from "lucide-react";
+
 import { useState } from "react";
 
 const banners = ["hej", "hejsan", "tjabba", "tjena", "hallå"];
@@ -50,15 +52,15 @@ function BannerCarousel() {
       )}
       <button
         onClick={leftButtonHandler}
-        className="absolute bottom-2 left-2 top-2 rounded-lg p-4 text-xl opacity-30 transition-colors hover:bg-black hover:bg-opacity-30 hover:opacity-100"
+        className="absolute bottom-0 left-0 top-0 bg-gray-950 bg-opacity-50 p-4 px-6 text-white opacity-20 transition-opacity hover:opacity-100"
       >
-        👈
+        <StepBack />
       </button>
       <button
         onClick={rightButtonHandler}
-        className="absolute bottom-2 right-2 top-2 rounded-lg p-4 text-xl opacity-30 transition-colors hover:bg-black hover:bg-opacity-30 hover:opacity-100"
+        className="absolute bottom-0 right-0 top-0 bg-gray-950 bg-opacity-50 p-4 px-6 text-white opacity-20 transition-opacity hover:opacity-100"
       >
-        👉
+        <StepForward />
       </button>
       <div className="absolute bottom-4 flex gap-3">
         {banners.map((_, i) =>

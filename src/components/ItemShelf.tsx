@@ -1,3 +1,4 @@
+import { StepForward, StepBack } from "lucide-react";
 import { useRef, useState } from "react";
 import useFetch from "../hooks/useFetch";
 import IProduct from "../types/IProduct";
@@ -39,7 +40,7 @@ function ItemShelf(props: IProps) {
       behavior: "smooth",
     });
 
-    if (scrollPosition <= visibleWidth) {
+    if (scrollPosition <= 0) {
       setScrollLocation(ScrollLocations.Left);
     } else if (scrollPosition + visibleWidth >= totalWidth) {
       setScrollLocation(ScrollLocations.Right);
@@ -92,23 +93,23 @@ function ItemShelf(props: IProps) {
           >
             <button
               onClick={() => scrollButtonHandler(-1)}
-              className={`absolute bottom-2 left-2 top-2 rounded-lg p-4 text-xl opacity-30 transition-opacity ${
-                scrollLocation !== ScrollLocations.Left
-                  ? "bg-black bg-opacity-30 opacity-100 hover:opacity-100"
-                  : "pointer-events-none"
+              className={`absolute bottom-2 left-2 top-2 rounded-lg p-4 opacity-50 transition-opacity ${
+                scrollLocation === ScrollLocations.Left
+                  ? "pointer-events-none opacity-20"
+                  : "bg-gray-950 bg-opacity-[0.15] hover:opacity-100 dark:bg-opacity-50"
               }`}
             >
-              👈
+              <StepBack />
             </button>
             <button
               onClick={() => scrollButtonHandler(1)}
-              className={`absolute bottom-2 right-2 top-2 rounded-lg p-4 text-xl opacity-30 transition-opacity ${
-                scrollLocation !== ScrollLocations.Right
-                  ? "bg-black bg-opacity-30 opacity-100 hover:opacity-100"
-                  : "pointer-events-none"
+              className={`absolute bottom-2 right-2 top-2 rounded-lg p-4 opacity-50 transition-opacity ${
+                scrollLocation === ScrollLocations.Right
+                  ? "pointer-events-none opacity-20"
+                  : "bg-gray-950 bg-opacity-[0.15] opacity-100 hover:opacity-100 dark:bg-opacity-50"
               }`}
             >
-              👉
+              <StepForward />
             </button>
             {data.map((product: IProduct, i: number) => (
               <ShelfItem product={product} key={i} index={i} />

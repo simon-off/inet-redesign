@@ -39,7 +39,8 @@ function ItemShelf(props: IProps) {
 
   const handleScroll = () => {
     const ref = scrollRef.current;
-    const activationPadding = 20;
+    // Controls how far from the edge of the container (in pixels) the scroll buttons are enabled/disabled.
+    const activationPadding = 100;
 
     if (ref.scrollLeft < activationPadding) {
       setScrollLocation(ScrollLocations.Left);
@@ -95,10 +96,10 @@ function ItemShelf(props: IProps) {
               tabIndex={-1}
               disabled={scrollLocation === ScrollLocations.Left}
               onClick={() => handleScrollButtonClick(-1)}
-              className={`absolute left-2 z-10 rounded-lg bg-gray-950 bg-opacity-20 p-4 opacity-50 transition-opacity duration-500 hover:duration-150 dark:bg-opacity-50 ${
+              className={`absolute left-2 z-10 rounded-lg bg-gray-950 bg-opacity-20 p-4 transition-opacity duration-500 hover:duration-150 dark:bg-opacity-50 ${
                 scrollLocation === ScrollLocations.Left
                   ? "opacity-0 hover:opacity-20 focus-visible:opacity-20"
-                  : "hover:opacity-100 focus-visible:opacity-100"
+                  : "opacity-50 hover:opacity-100 focus-visible:opacity-100"
               }`}
             >
               <StepBack />
@@ -107,10 +108,10 @@ function ItemShelf(props: IProps) {
               tabIndex={-1}
               disabled={scrollLocation === ScrollLocations.Right}
               onClick={() => handleScrollButtonClick(1)}
-              className={`absolute right-2 z-10 rounded-lg bg-gray-950 bg-opacity-20 p-4 opacity-50 transition-opacity duration-500 hover:duration-150 dark:bg-opacity-50 ${
+              className={`absolute right-2 z-10 rounded-lg bg-gray-950 bg-opacity-20 p-4 transition-opacity duration-500 hover:duration-150 dark:bg-opacity-50 ${
                 scrollLocation === ScrollLocations.Right
                   ? "opacity-0 hover:opacity-20 focus-visible:opacity-20"
-                  : "hover:opacity-100 focus-visible:opacity-100"
+                  : "opacity-50 hover:opacity-100 focus-visible:opacity-100"
               }`}
             >
               <StepForward />

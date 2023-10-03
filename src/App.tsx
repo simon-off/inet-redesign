@@ -12,7 +12,6 @@ import {
   Smartphone,
   Speaker,
 } from "lucide-react";
-import BannerCarousel from "./components/BannerCarousel";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ItemShelf from "./components/ItemShelf";
@@ -22,8 +21,9 @@ import IProduct from "./types/IProduct";
 import CategoryItem from "./components/cards/CategoryCard";
 import ICategory from "./types/IProduct copy";
 import ItemDrawer from "./components/ItemDrawer";
+import BannerSlider from "./components/BannerSlider";
 
-const categories = [
+const CATEGORIES = [
   { name: "Datorer", icon: <Computer size={48} absoluteStrokeWidth strokeWidth={1.5} /> },
   { name: "Spelkonsoler", icon: <Gamepad size={48} absoluteStrokeWidth strokeWidth={1.5} /> },
   { name: "Bildskärmar", icon: <Monitor size={48} absoluteStrokeWidth strokeWidth={1.5} /> },
@@ -45,9 +45,10 @@ export default function App() {
     <div className="flex min-h-[100dvh] flex-col bg-gray-100 from-gray-950 to-transparent bg-[auto_100px] bg-no-repeat text-gray-800 dark:bg-gray-900 dark:bg-gradient-to-b dark:text-gray-200">
       <Header />
       <main className="mx-auto flex w-full max-w-screen-xl flex-1 flex-col gap-8 px-4 pb-16 pt-8">
-        <BannerCarousel />
+        {/* <BannerCarousel /> */}
+        <BannerSlider />
         <ItemDrawer heading="Populära kategorier">
-          {categories.map((category: ICategory, i: number) => (
+          {CATEGORIES.map((category: ICategory, i: number) => (
             <CategoryItem category={category} key={i} />
           ))}
         </ItemDrawer>

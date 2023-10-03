@@ -2,6 +2,8 @@ import { StepForward, StepBack } from "lucide-react";
 import { ReactNode, useRef, useState } from "react";
 import SectionError from "./SectionError";
 import SectionLoading from "./SectionLoading";
+import ItemShelfButton from "./ItemShelfButton";
+import Direction from "../types/Direction";
 
 interface IProps {
   children: ReactNode;
@@ -26,11 +28,11 @@ export default function ItemShelf(props: IProps) {
   const scrollRef = useRef<HTMLDivElement>(document.createElement("div"));
   const [scrollLocation, setScrollLocation] = useState<ScrollLocations>(ScrollLocations.Left);
 
-  const handleScrollButtonClick = (direction: number) => {
+  const handleScrollButtonClick = (direction: Direction) => {
     const ref = scrollRef.current;
 
     ref.scroll({
-      left: ref.scrollLeft + ref.offsetWidth * direction,
+      left: ref.scrollLeft + ref.offsetWidth * (direction === Direction.Left ? -1 : 1),
       behavior: "smooth",
     });
   };
@@ -82,30 +84,20 @@ export default function ItemShelf(props: IProps) {
             scrollbarWidth: "none",
           }}
         >
-          <button
-            aria-label={`scroll ${props.visibleItems} items left`}
+          <ItemShelfButton
             disabled={scrollLocation === ScrollLocations.Left}
-            onClick={() => handleScrollButtonClick(-1)}
-            className={`absolute left-2 z-10 rounded-lg bg-gray-950 bg-opacity-20 p-4 transition-opacity duration-500 hover:duration-150 dark:bg-opacity-50 ${
-              scrollLocation === ScrollLocations.Left
-                ? "opacity-0 hover:opacity-20 focus-visible:opacity-20"
-                : "opacity-50 hover:opacity-100 focus-visible:opacity-100"
-            }`}
+            direction={Direction.Left}
+            onClick={() => handleScrollButtonClick(Direction.Left)}
           >
             <StepBack />
-          </button>
-          <button
-            aria-label={`scroll ${props.visibleItems} items right`}
+          </ItemShelfButton>
+          <ItemShelfButton
             disabled={scrollLocation === ScrollLocations.Right}
-            onClick={() => handleScrollButtonClick(1)}
-            className={`absolute right-2 z-10 rounded-lg bg-gray-950 bg-opacity-20 p-4 transition-opacity duration-500 hover:duration-150 dark:bg-opacity-50 ${
-              scrollLocation === ScrollLocations.Right
-                ? "opacity-0 hover:opacity-20 focus-visible:opacity-20"
-                : "opacity-50 hover:opacity-100 focus-visible:opacity-100"
-            }`}
+            direction={Direction.Right}
+            onClick={() => handleScrollButtonClick(Direction.Right)}
           >
             <StepForward />
-          </button>
+          </ItemShelfButton>
           {props.children}
         </div>
       </div>

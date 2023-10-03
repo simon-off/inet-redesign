@@ -1,4 +1,4 @@
-export default function ItemShelfLoading() {
+export default function SectionLoading() {
   return (
     <section>
       <h2 className="pb-2 font-mono font-semibold uppercase opacity-80">Håll i hatten</h2>

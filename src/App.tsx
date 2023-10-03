@@ -15,12 +15,13 @@ import {
 import BannerCarousel from "./components/BannerCarousel";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import ItemShelf from "./components/shelf/ItemShelf";
-import ProductItem from "./components/shelf-items/ProductItem";
+import ItemShelf from "./components/ItemShelf";
+import ProductItem from "./components/cards/ProductCard";
 import useFetch from "./hooks/useFetch";
 import IProduct from "./types/IProduct";
-import CategoryItem from "./components/shelf-items/CategoryItem";
+import CategoryItem from "./components/cards/CategoryCard";
 import ICategory from "./types/IProduct copy";
+import ItemDrawer from "./components/ItemDrawer";
 
 const categories = [
   { name: "Datorer", icon: <Computer size={48} absoluteStrokeWidth strokeWidth={1.5} /> },
@@ -45,12 +46,11 @@ export default function App() {
       <Header />
       <main className="mx-auto flex w-full max-w-screen-xl flex-1 flex-col gap-8 px-4 pb-16 pt-8">
         <BannerCarousel />
-        {/* TODO: New shelf for the categories... I don't need the scroll buttons. We can fold instead! */}
-        <ItemShelf heading="Populära kategorier" link="#" visibleItems={6}>
+        <ItemDrawer heading="Populära kategorier">
           {categories.map((category: ICategory, i: number) => (
             <CategoryItem category={category} key={i} />
           ))}
-        </ItemShelf>
+        </ItemDrawer>
         <ItemShelf heading="Kampanjer" link="#" visibleItems={5} error={products.error} loading={products.loading}>
           {products.data?.map((product: IProduct, i: number) => <ProductItem product={product} key={i} />)}
         </ItemShelf>

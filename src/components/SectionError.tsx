@@ -1,4 +1,4 @@
-export default function ItemShelfError({ error }: { error: Error }) {
+export default function SectionError({ error }: { error: Error }) {
   return (
     <section>
       <h2 className="pb-2 font-mono font-semibold uppercase opacity-80">Något gick snett</h2>

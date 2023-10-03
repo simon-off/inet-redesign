@@ -1,7 +1,7 @@
 import { StepForward, StepBack } from "lucide-react";
 import { ReactNode, useRef, useState } from "react";
-import ItemShelfError from "./ItemShelfError";
-import ItemShelfLoading from "./ItemShelfLoading";
+import SectionError from "./SectionError";
+import SectionLoading from "./SectionLoading";
 
 interface IProps {
   children: ReactNode;
@@ -51,15 +51,15 @@ export default function ItemShelf(props: IProps) {
 
   // RETURN if error
   if (props.error) {
-    return <ItemShelfError error={props.error} />;
+    return <SectionError error={props.error} />;
   }
 
   // RETURN if loading
   if (props.loading) {
-    return <ItemShelfLoading />;
+    return <SectionLoading />;
   }
 
-  // RENDERING for loading or successful data fetch
+  // RETURN if success
   return (
     <section>
       <div className="flex items-center justify-between gap-4 pb-2 font-mono uppercase">
@@ -83,7 +83,7 @@ export default function ItemShelf(props: IProps) {
           }}
         >
           <button
-            tabIndex={-1}
+            aria-label={`scroll ${props.visibleItems} items left`}
             disabled={scrollLocation === ScrollLocations.Left}
             onClick={() => handleScrollButtonClick(-1)}
             className={`absolute left-2 z-10 rounded-lg bg-gray-950 bg-opacity-20 p-4 transition-opacity duration-500 hover:duration-150 dark:bg-opacity-50 ${
@@ -95,7 +95,7 @@ export default function ItemShelf(props: IProps) {
             <StepBack />
           </button>
           <button
-            tabIndex={-1}
+            aria-label={`scroll ${props.visibleItems} items right`}
             disabled={scrollLocation === ScrollLocations.Right}
             onClick={() => handleScrollButtonClick(1)}
             className={`absolute right-2 z-10 rounded-lg bg-gray-950 bg-opacity-20 p-4 transition-opacity duration-500 hover:duration-150 dark:bg-opacity-50 ${

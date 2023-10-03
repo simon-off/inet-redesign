@@ -23,6 +23,11 @@ export default {
       serif: ["serif", "Georgia"],
       mono: ["JetBrains Mono Variable", "monospace"],
     },
+    extend: {
+      transitionProperty: {
+        "max-height": "max-height",
+      },
+    },
   },
   plugins: ["prettier-plugin-tailwindcss"],
 };

@@ -32,8 +32,8 @@ export default function Header() {
       <div className="text-sm">
         <div className="mx-auto flex max-w-screen-xl items-center justify-between gap-4 px-4 pb-2 pt-4">
           <ul className="flex max-h-[1.5em] flex-wrap gap-4 overflow-hidden max-sm:text-xs">
-            {SELLING_POINTS.map((sellingPoint) => (
-              <li className="flex items-end gap-1 whitespace-nowrap">
+            {SELLING_POINTS.map((sellingPoint, i) => (
+              <li key={i} className="flex items-end gap-1 whitespace-nowrap">
                 <Check size={16} aria-hidden className="-translate-y-[1px]" /> {sellingPoint}
               </li>
             ))}
@@ -110,8 +110,8 @@ export default function Header() {
       >
         <nav className="mx-auto flex max-w-screen-xl justify-between px-4">
           <ul className="flex gap-6">
-            {NAV_LINKS.map((link) => (
-              <li>
+            {NAV_LINKS.map((link, i) => (
+              <li key={i}>
                 <a className="link block py-4" href={link.href}>
                   {link.name}
                 </a>

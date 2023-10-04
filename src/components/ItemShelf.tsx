@@ -1,18 +1,9 @@
 import { StepForward, StepBack } from "lucide-react";
-import { ReactNode, useRef, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import SectionError from "./SectionError";
 import SectionLoading from "./SectionLoading";
 import ItemShelfButton from "./ItemShelfButton";
 import Direction from "../types/Direction";
-
-interface IProps {
-  children: ReactNode;
-  error?: Error | null;
-  loading?: boolean;
-  heading: string;
-  link: string;
-  visibleItems: number;
-}
 
 enum ScrollLocations {
   Left,
@@ -20,13 +11,42 @@ enum ScrollLocations {
   Right,
 }
 
+interface IProps {
+  children: ReactNode;
+  error?: Error | null;
+  loading?: boolean;
+  heading: string;
+  link: string;
+  itemWidth: number;
+}
+
 // The gap between items in pixels
 const GAP = 12;
+// Controls how far from the edge of the container (in pixels) the scroll buttons are enabled/disabled.
+const BUTTON_ACTIVATION_MARGIN = 100;
+
+//===========================================================//
+//+++ COMPONENT +++||----------------------------------------//
+//===========================================================//
 
 export default function ItemShelf(props: IProps) {
   // State and ref for horizontal scrolling functionality
   const scrollRef = useRef<HTMLDivElement>(document.createElement("div"));
   const [scrollLocation, setScrollLocation] = useState<ScrollLocations>(ScrollLocations.Left);
+  const [screenWidth, setScreenWidth] = useState(0);
+
+  // Add event listener to update screenWidth state
+  useEffect(() => {
+    const updateDimension = () => {
+      setScreenWidth(scrollRef.current.offsetWidth);
+    };
+    updateDimension();
+    window.addEventListener("resize", updateDimension);
+
+    return () => {
+      window.removeEventListener("resize", updateDimension);
+    };
+  }, []);
 
   const handleScrollButtonClick = (direction: Direction) => {
     const ref = scrollRef.current;
@@ -39,29 +59,34 @@ export default function ItemShelf(props: IProps) {
 
   const handleScroll = () => {
     const ref = scrollRef.current;
-    // Controls how far from the edge of the container (in pixels) the scroll buttons are enabled/disabled.
-    const activationPadding = 100;
 
-    if (ref.scrollLeft < activationPadding) {
+    if (ref.scrollLeft < BUTTON_ACTIVATION_MARGIN) {
       setScrollLocation(ScrollLocations.Left);
-    } else if (ref.scrollLeft + ref.offsetWidth >= ref.scrollWidth - activationPadding) {
+    } else if (ref.scrollLeft + ref.offsetWidth >= ref.scrollWidth - BUTTON_ACTIVATION_MARGIN) {
       setScrollLocation(ScrollLocations.Right);
     } else {
       setScrollLocation(ScrollLocations.Middle);
     }
   };
 
-  // RETURN if error
+  const calculateGridAutoColumns = () => {
+    const columns = Math.floor(screenWidth / props.itemWidth);
+
+    return `calc((${100 / columns}% - ${GAP}px) + (${GAP}px / ${columns}))`;
+  };
+
+  //===========================================================//
+  //+++ RETURNS +++||------------------------------------------//
+  //===========================================================//
+
   if (props.error) {
     return <SectionError error={props.error} />;
   }
 
-  // RETURN if loading
   if (props.loading) {
     return <SectionLoading />;
   }
 
-  // RETURN if success
   return (
     <section className="px-4">
       <div className="flex items-center justify-between gap-4 pb-2 font-mono uppercase">
@@ -80,7 +105,7 @@ export default function ItemShelf(props: IProps) {
           className={`grid snap-x grid-flow-col items-center overflow-x-scroll`}
           style={{
             gap: `${GAP}px`,
-            gridAutoColumns: `calc((${100 / props.visibleItems}% - ${GAP}px) + (${GAP}px / ${props.visibleItems}))`,
+            gridAutoColumns: calculateGridAutoColumns(),
             scrollbarWidth: "none",
           }}
         >

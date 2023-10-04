@@ -60,19 +60,13 @@ export default function App() {
               <CategoryItem category={category} key={i} />
             ))}
           </ItemDrawer>
-          <ItemShelf heading="Kampanjer" link="#" visibleItems={5} error={products.error} loading={products.loading}>
+          <ItemShelf heading="Kampanjer" link="#" itemWidth={210} error={products.error} loading={products.loading}>
             {products.data?.map((product: IProduct, i: number) => <ProductItem product={product} key={i} />)}
           </ItemShelf>
-          <ItemShelf heading="Topplistan" link="#" visibleItems={4} error={products.error} loading={products.loading}>
+          <ItemShelf heading="Topplistan" link="#" itemWidth={250} error={products.error} loading={products.loading}>
             {products.data?.map((product: IProduct, i: number) => <ProductItem product={product} key={i} />)}
           </ItemShelf>
-          <ItemShelf
-            heading="Nya produkter"
-            link="#"
-            visibleItems={6}
-            error={products.error}
-            loading={products.loading}
-          >
+          <ItemShelf heading="Nya produkter" link="#" itemWidth={180} error={products.error} loading={products.loading}>
             {products.data?.map((product: IProduct, i: number) => <ProductItem product={product} key={i} />)}
           </ItemShelf>
         </main>

@@ -28,10 +28,10 @@ export default function Header() {
   return (
     <header>
       <div className="text-sm">
-        <div className="mx-auto flex max-w-screen-xl items-center justify-between px-4 pb-2 pt-4">
-          <ul className="flex gap-4">
+        <div className="mx-auto flex max-w-screen-xl items-center justify-between gap-4 px-4 pb-2 pt-4">
+          <ul className="flex max-h-[1.5em] flex-wrap gap-4 overflow-hidden max-sm:text-xs">
             {SELLING_POINTS.map((sellingPoint) => (
-              <li className="flex items-end gap-1">
+              <li className="flex items-end gap-1 whitespace-nowrap">
                 <Check size={16} aria-hidden className="-translate-y-[1px]" /> {sellingPoint}
               </li>
             ))}
@@ -61,26 +61,27 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <div className="text-sm">
-        <div className="mx-auto flex max-w-screen-xl items-center gap-8 px-4 pb-6 pt-4">
-          <a href="#">
-            <h1 className="flex items-center gap-2 font-mono text-4xl font-black">
-              <Cpu size={42} className="translate-y-[0px]" />
-              <span className="translate-y-[1px] text-[2.75rem] leading-none">inot</span>
-            </h1>
-          </a>
-          <div
-            onClick={() => searchInputRef.current?.focus()}
-            className="flex flex-grow items-center gap-3 rounded-md border border-gray-200 bg-white px-3 py-2 shadow-md outline-1 outline-gray-400 focus-within:outline dark:border-gray-700 dark:bg-gray-950"
-          >
-            <Search size={16} />
-            <input
-              ref={searchInputRef}
-              type="text"
-              placeholder="Sök bland 13 157 produkter i 578 kategorier..."
-              className="w-full bg-inherit focus:outline-none focus:placeholder:text-gray-500"
-            />
-          </div>
+
+      <div className="mx-auto grid max-w-screen-xl grid-cols-2 items-center gap-x-4 gap-y-4 px-4 pb-6 pt-4 text-sm max-md:grid-rows-[auto_auto] sm:gap-x-8 md:grid-cols-[auto_1fr_auto]">
+        <a href="#">
+          <h1 className="flex items-center gap-2 font-mono text-4xl font-black lg:text-[2.75rem]">
+            <Cpu size={"1em"} className="" />
+            <span className="translate-y-[1px] leading-none tracking-tight">inot</span>
+          </h1>
+        </a>
+        <div
+          onClick={() => searchInputRef.current?.focus()}
+          className="flex flex-grow items-center gap-3 rounded-md border border-gray-200 bg-white px-3 py-2 shadow-md outline-1 outline-gray-400 focus-within:outline dark:border-gray-700 dark:bg-gray-950 max-md:col-span-full max-md:row-start-2"
+        >
+          <Search size={16} />
+          <input
+            ref={searchInputRef}
+            type="text"
+            placeholder="Sök bland 13 157 produkter i 578 kategorier..."
+            className="w-full bg-inherit focus:outline-none focus:placeholder:text-gray-500"
+          />
+        </div>
+        <div className="flex items-center justify-end gap-4 sm:gap-8">
           <a href="#" className="link flex items-center">
             <span className="mr-2">
               <Bot size={20} />
@@ -89,12 +90,13 @@ export default function Header() {
           </a>
           <a
             href="#"
-            className="flex -translate-y-[1px] items-center gap-2 rounded-md bg-green-700 bg-opacity-90 px-4 py-2 text-white shadow-md transition hover:bg-green-600 dark:bg-green-800 dark:hover:bg-green-700"
+            className="flex h-full items-center gap-2 rounded-md bg-green-700 bg-opacity-90 px-4 py-2 text-white shadow-md transition hover:bg-green-600 dark:bg-green-800 dark:hover:bg-green-700"
           >
-            <ShoppingCart size={16} /> Kundvagn
+            <ShoppingCart size={16} className="my-1" /> <span className="max-sm:sr-only">Kundvagn</span>
           </a>
         </div>
       </div>
+
       <div className="border-y border-gray-200 bg-white text-sm shadow-lg dark:border-gray-700 dark:bg-gray-800">
         <nav className="mx-auto flex max-w-screen-xl justify-between px-4">
           <ul className="flex gap-6">

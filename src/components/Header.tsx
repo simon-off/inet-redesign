@@ -104,7 +104,7 @@ export default function Header() {
       <div
         className={
           companyMode
-            ? "border-y border-blue-500 bg-white text-sm shadow-lg dark:bg-gray-800"
+            ? "border-y border-yellow-600 bg-white text-sm shadow-lg dark:bg-gray-800"
             : "border-y border-gray-200 bg-white text-sm shadow-lg dark:border-gray-700 dark:bg-gray-800"
         }
       >

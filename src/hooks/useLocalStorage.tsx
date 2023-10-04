@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
-function useLocalStorage<TDefault>(key: string, defaultValue: TDefault) {
-  const [value, setValue] = useState(() => {
+function useLocalStorage<T>(key: string, defaultValue: T): [T, React.Dispatch<React.SetStateAction<T>>] {
+  const [value, setValue] = useState<T>(() => {
     let currentValue;
 
     try {

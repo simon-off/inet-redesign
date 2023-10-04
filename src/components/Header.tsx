@@ -2,6 +2,17 @@ import { Phone, Mail, MessageSquare, Sun, Moon, Check, ShoppingCart, Search, Cpu
 import { useEffect, useRef } from "react";
 import useLocalStorage from "../hooks/useLocalStorage";
 
+const SELLING_POINTS = ["Fri frakt", "30 dagars öppet köp", "Fria returer", "Order skickas på måndag"] as const;
+const NAV_LINKS = [
+  { name: "Produkter", href: "#" },
+  { name: "Datorbyggare", href: "#" },
+  { name: "Veckans Tips", href: "#" },
+  { name: "Kampanjer", href: "#" },
+  { name: "Fyndhörnan", href: "#" },
+  { name: "Tävling", href: "#" },
+  { name: "Guider", href: "#" },
+] as const;
+
 export default function Header() {
   const [darkMode, setDarkMode] = useLocalStorage("darkMode", false);
   const searchInputRef = useRef<HTMLInputElement>(null);
@@ -17,20 +28,13 @@ export default function Header() {
   return (
     <header>
       <div className="text-sm">
-        <div className="mx-auto flex max-w-screen-xl items-center justify-between px-4">
+        <div className="mx-auto flex max-w-screen-xl items-center justify-between px-4 pb-2 pt-4">
           <ul className="flex gap-4">
-            <li className="flex items-end gap-1">
-              <Check size={16} aria-hidden className="-translate-y-[1px]" /> Fri frakt
-            </li>
-            <li className="flex items-end gap-1">
-              <Check size={16} aria-hidden className="-translate-y-[1px]" /> 30 dagars öppet köp
-            </li>
-            <li className="flex items-end gap-1">
-              <Check size={16} aria-hidden className="-translate-y-[1px]" /> Fria returer
-            </li>
-            <li className="flex items-end gap-1">
-              <Check size={16} aria-hidden className="-translate-y-[1px]" /> Order skickas på måndag
-            </li>
+            {SELLING_POINTS.map((sellingPoint) => (
+              <li className="flex items-end gap-1">
+                <Check size={16} aria-hidden className="-translate-y-[1px]" /> {sellingPoint}
+              </li>
+            ))}
           </ul>
           <div className="flex gap-4">
             <div className="flex items-center gap-2">
@@ -47,7 +51,7 @@ export default function Header() {
                 <Moon size={16} />
               </span>
             </div>
-            <div className="flex items-center gap-3 py-4 pl-4">
+            <div className="hidden items-center gap-3 pl-4 sm:flex">
               <p>Privatperson</p>
               <span className="-mt-[2px]">|</span>
               <a href="#" className="link text-gray-500">
@@ -94,41 +98,13 @@ export default function Header() {
       <div className="border-y border-gray-200 bg-white text-sm shadow-lg dark:border-gray-700 dark:bg-gray-800">
         <nav className="mx-auto flex max-w-screen-xl justify-between px-4">
           <ul className="flex gap-6">
-            <li>
-              <a className="link block py-4" href="#">
-                Produkter
-              </a>
-            </li>
-            <li>
-              <a className="link block py-4" href="#">
-                Datorbyggare
-              </a>
-            </li>
-            <li>
-              <a className="link block py-4" href="#">
-                Veckans Tips
-              </a>
-            </li>
-            <li>
-              <a className="link block py-4" href="#">
-                Kampanjer
-              </a>
-            </li>
-            <li>
-              <a className="link block py-4" href="#">
-                Fyndhörnan
-              </a>
-            </li>
-            <li>
-              <a className="link block py-4" href="#">
-                Tävling
-              </a>
-            </li>
-            <li>
-              <a className="link block py-4" href="#">
-                Guider
-              </a>
-            </li>
+            {NAV_LINKS.map((link) => (
+              <li>
+                <a className="link block py-4" href={link.href}>
+                  {link.name}
+                </a>
+              </li>
+            ))}
           </ul>
           <ul className="flex">
             <li className="px-4">

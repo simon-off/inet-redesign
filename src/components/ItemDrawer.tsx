@@ -30,7 +30,7 @@ export default function ItemDrawer(props: IProps) {
 
   // RETURN if success
   return (
-    <section>
+    <section className="px-4">
       <div className="flex items-center justify-between gap-4 pb-2 font-mono uppercase">
         <h2 className="font-semibold uppercase opacity-80">{props.heading}</h2>
         <div className="h-[1px] flex-1 bg-gray-400 bg-opacity-30"></div>
@@ -41,7 +41,7 @@ export default function ItemDrawer(props: IProps) {
       <div className="relative">
         <div
           ref={drawerRef}
-          className="transition-max-height motion-safe grid grid-cols-[repeat(auto-fit,minmax(calc(135px),1fr))] duration-300 md:grid-cols-[repeat(auto-fit,minmax(calc(180px),1fr))]"
+          className="motion-safe grid grid-cols-[repeat(auto-fit,minmax(calc(135px),1fr))] transition-max-height duration-300 md:grid-cols-[repeat(auto-fit,minmax(calc(180px),1fr))]"
           style={{
             gap: `${GAP}px`,
             overflowY: "hidden",

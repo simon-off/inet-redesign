@@ -1,12 +1,12 @@
 import { StepForward, StepBack } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 const BANNERS = [
-  { link: "#", alt: "DJI", img: "dji.webp" },
-  { link: "#", alt: "Inet", img: "inet.webp" },
-  { link: "#", alt: "Inet 2", img: "inet2.jpg" },
-  { link: "#", alt: "Thermaltake", img: "thermaltake.webp" },
-];
+  { link: "#", alt: "DJI Mini 4 Pro", imgDesktop: "dji.jpg", imgMobile: "dji-mobile.jpg" },
+  { link: "#", alt: "Microsoft Surface Pro", imgDesktop: "microsoft.webp", imgMobile: "microsoft-mobile.webp" },
+  { link: "#", alt: "SteelSeries Alias", imgDesktop: "steelseries.webp", imgMobile: "steelseries-mobile.webp" },
+  { link: "#", alt: "Fractal Design Terra", imgDesktop: "fractal.jpg", imgMobile: "fractal-mobile.jpg" },
+] as const;
 
 function PageButton({
   i,
@@ -20,8 +20,8 @@ function PageButton({
   return (
     <div
       onClick={() => setPage(i)}
-      className={`${active ? "bg-white" : "bg-gray-950 bg-opacity-20 hover:bg-opacity-80"}
-        transition-color h-4 w-4 cursor-pointer rounded-full duration-150`}
+      className={`${active ? "bg-gray-50" : "bg-gray-950 opacity-40 hover:opacity-80"}
+        transition-color h-4 w-4 cursor-pointer rounded-full border border-gray-50 duration-150`}
     ></div>
   );
 }
@@ -31,17 +31,18 @@ export default function BannerCarousel() {
   const bannerContainerRef = useRef<HTMLDivElement>(document.createElement("div"));
 
   const DrawBanners = () => {
-    const sliced = [...BANNERS.slice(page), ...BANNERS.slice(0, page)];
-
     return (
       <>
-        {sliced.map((banner, i) => (
+        {BANNERS.map((banner, i) => (
           <a
             href={banner.link}
             key={i}
             className="h-full w-full flex-shrink-0 bg-green-800 text-8xl font-black text-white"
           >
-            <img src={`images/banner/${banner.img}`} alt={banner.alt} />
+            <picture>
+              <source media="(min-width: 640px)" srcSet={`images/banner/${banner.imgDesktop}`} />
+              <img src={`images/banner/${banner.imgMobile}`} alt={banner.alt} />
+            </picture>
           </a>
         ))}
       </>
@@ -49,19 +50,19 @@ export default function BannerCarousel() {
   };
 
   const leftButtonHandler = () => {
-    const animation = bannerContainerRef.current.animate([{ translate: "100%" }], { duration: 200, easing: "ease" });
-    animation.play();
-    animation.onfinish = () => setPage(page <= 0 ? BANNERS.length - 1 : page - 1);
+    setPage(page <= 0 ? BANNERS.length - 1 : page - 1);
   };
   const rightButtonHandler = () => {
-    const animation = bannerContainerRef.current.animate([{ translate: "-100%" }], { duration: 200, easing: "ease" });
-    animation.play();
-    animation.onfinish = () => setPage(page >= BANNERS.length - 1 ? 0 : page + 1);
+    setPage(page >= BANNERS.length - 1 ? 0 : page + 1);
   };
 
   return (
-    <section className="relative flex h-[240px] items-center justify-center overflow-hidden rounded-md">
-      <div ref={bannerContainerRef} className="flex h-full w-full -translate-x-full">
+    <section className="relative flex items-center justify-center overflow-hidden md:mx-4 md:mt-8 md:rounded-md">
+      <div
+        ref={bannerContainerRef}
+        className="transition-translate flex h-full w-full"
+        style={{ translate: `-${page * 100}%` }}
+      >
         <DrawBanners />
       </div>
       <button

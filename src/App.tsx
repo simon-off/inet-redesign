@@ -21,7 +21,7 @@ import IProduct from "./types/IProduct";
 import CategoryItem from "./components/cards/CategoryCard";
 import ICategory from "./types/IProduct copy";
 import ItemDrawer from "./components/ItemDrawer";
-import BannerSlider from "./components/BannerSlider";
+import BannerCarousel from "./components/BannerCarousel";
 
 const CATEGORIES = [
   { name: "Datorer", icon: <Computer size={48} absoluteStrokeWidth strokeWidth={1.5} /> },
@@ -44,9 +44,8 @@ export default function App() {
   return (
     <div className="flex min-h-[100dvh] flex-col bg-gray-100 from-gray-950 to-transparent bg-[auto_100px] bg-no-repeat text-gray-800 dark:bg-gray-900 dark:bg-gradient-to-b dark:text-gray-200">
       <Header />
-      <main className="mx-auto flex w-full max-w-screen-xl flex-1 flex-col gap-8 px-4 pb-16 pt-8">
-        {/* <BannerCarousel /> */}
-        <BannerSlider />
+      <main className="mx-auto flex w-full max-w-screen-xl flex-1 flex-col gap-8 pb-16">
+        <BannerCarousel />
         <ItemDrawer heading="Populära kategorier">
           {CATEGORIES.map((category: ICategory, i: number) => (
             <CategoryItem category={category} key={i} />

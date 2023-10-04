@@ -63,7 +63,7 @@ export default function ItemShelf(props: IProps) {
 
   // RETURN if success
   return (
-    <section>
+    <section className="px-4">
       <div className="flex items-center justify-between gap-4 pb-2 font-mono uppercase">
         <a href={props.link}>
           <h2 className="link font-semibold uppercase opacity-80 hover:opacity-100">{props.heading}</h2>

@@ -1,6 +1,7 @@
 import { Phone, Mail, MessageSquare, Sun, Moon, Check, ShoppingCart, Search, Cpu, Bot } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import useLocalStorage from "../hooks/useLocalStorage";
+import { CompanyContext } from "../App";
 
 const SELLING_POINTS = ["Fri frakt", "30 dagars öppet köp", "Fria returer", "Order skickas på måndag"] as const;
 const NAV_LINKS = [
@@ -16,6 +17,7 @@ const NAV_LINKS = [
 export default function Header() {
   const [darkMode, setDarkMode] = useLocalStorage("darkMode", false);
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const { companyMode, setCompanyMode } = useContext(CompanyContext);
 
   useEffect(() => {
     if (darkMode) {
@@ -52,11 +54,13 @@ export default function Header() {
               </span>
             </div>
             <div className="hidden items-center gap-3 pl-4 sm:flex">
-              <p>Privatperson</p>
+              <button onClick={() => setCompanyMode(false)} className={companyMode ? "link text-gray-500" : ""}>
+                Privatperson
+              </button>
               <span className="-mt-[2px]">|</span>
-              <a href="#" className="link text-gray-500">
+              <button onClick={() => setCompanyMode(true)} className={companyMode ? "" : "link text-gray-500"}>
                 Företag
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -97,7 +101,13 @@ export default function Header() {
         </div>
       </div>
 
-      <div className="border-y border-gray-200 bg-white text-sm shadow-lg dark:border-gray-700 dark:bg-gray-800">
+      <div
+        className={
+          companyMode
+            ? "border-y border-blue-500 bg-white text-sm shadow-lg dark:bg-gray-800"
+            : "border-y border-gray-200 bg-white text-sm shadow-lg dark:border-gray-700 dark:bg-gray-800"
+        }
+      >
         <nav className="mx-auto flex max-w-screen-xl justify-between px-4">
           <ul className="flex gap-6">
             {NAV_LINKS.map((link) => (

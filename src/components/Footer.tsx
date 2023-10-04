@@ -1,6 +1,17 @@
+import { useContext } from "react";
+import { CompanyContext } from "../App";
+
 export default function Footer() {
+  const { companyMode } = useContext(CompanyContext);
+
   return (
-    <footer className="border-t border-gray-200 bg-white py-12 dark:border-gray-700 dark:bg-gray-800">
+    <footer
+      className={
+        companyMode
+          ? "border-t border-blue-500 bg-white py-12 dark:bg-gray-800"
+          : "border-t border-gray-200 bg-white py-12 dark:border-gray-700 dark:bg-gray-800"
+      }
+    >
       <div className="mx-auto max-w-screen-xl px-4 text-center font-mono">
         <p>
           redesign of{" "}

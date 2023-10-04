@@ -22,6 +22,8 @@ import CategoryItem from "./components/cards/CategoryCard";
 import ICategory from "./types/IProduct copy";
 import ItemDrawer from "./components/ItemDrawer";
 import BannerCarousel from "./components/BannerCarousel";
+import useLocalStorage from "./hooks/useLocalStorage";
+import { createContext } from "react";
 
 const CATEGORIES = [
   { name: "Datorer", icon: <Computer size={48} absoluteStrokeWidth strokeWidth={1.5} /> },
@@ -38,30 +40,44 @@ const CATEGORIES = [
   { name: "Programvara", icon: <Disc size={48} absoluteStrokeWidth strokeWidth={1.5} /> },
 ];
 
+export const CompanyContext = createContext<{
+  companyMode: boolean;
+  setCompanyMode: React.Dispatch<React.SetStateAction<boolean>>;
+}>({ companyMode: false, setCompanyMode: () => {} });
+
 export default function App() {
   const products = useFetch<IProduct[]>("data/mock-products.json");
+  const [companyMode, setCompanyMode] = useLocalStorage("companyMode", false);
 
   return (
-    <div className="flex min-h-[100dvh] flex-col bg-gray-100 from-gray-950 to-transparent bg-[auto_100px] bg-no-repeat text-gray-800 dark:bg-gray-900 dark:bg-gradient-to-b dark:text-gray-200">
-      <Header />
-      <main className="mx-auto flex w-full max-w-screen-xl flex-1 flex-col gap-8 pb-16">
-        <BannerCarousel />
-        <ItemDrawer heading="Populära kategorier">
-          {CATEGORIES.map((category: ICategory, i: number) => (
-            <CategoryItem category={category} key={i} />
-          ))}
-        </ItemDrawer>
-        <ItemShelf heading="Kampanjer" link="#" visibleItems={5} error={products.error} loading={products.loading}>
-          {products.data?.map((product: IProduct, i: number) => <ProductItem product={product} key={i} />)}
-        </ItemShelf>
-        <ItemShelf heading="Topplistan" link="#" visibleItems={4} error={products.error} loading={products.loading}>
-          {products.data?.map((product: IProduct, i: number) => <ProductItem product={product} key={i} />)}
-        </ItemShelf>
-        <ItemShelf heading="Nya produkter" link="#" visibleItems={6} error={products.error} loading={products.loading}>
-          {products.data?.map((product: IProduct, i: number) => <ProductItem product={product} key={i} />)}
-        </ItemShelf>
-      </main>
-      <Footer />
-    </div>
+    <CompanyContext.Provider value={{ companyMode: companyMode, setCompanyMode: setCompanyMode }}>
+      <div className="flex min-h-[100dvh] flex-col bg-gray-100 from-gray-950 to-transparent bg-[auto_100px] bg-no-repeat text-gray-800 dark:bg-gray-900 dark:bg-gradient-to-b dark:text-gray-200">
+        <Header />
+        <main className="mx-auto flex w-full max-w-screen-xl flex-1 flex-col gap-8 pb-16">
+          <BannerCarousel />
+          <ItemDrawer heading="Populära kategorier">
+            {CATEGORIES.map((category: ICategory, i: number) => (
+              <CategoryItem category={category} key={i} />
+            ))}
+          </ItemDrawer>
+          <ItemShelf heading="Kampanjer" link="#" visibleItems={5} error={products.error} loading={products.loading}>
+            {products.data?.map((product: IProduct, i: number) => <ProductItem product={product} key={i} />)}
+          </ItemShelf>
+          <ItemShelf heading="Topplistan" link="#" visibleItems={4} error={products.error} loading={products.loading}>
+            {products.data?.map((product: IProduct, i: number) => <ProductItem product={product} key={i} />)}
+          </ItemShelf>
+          <ItemShelf
+            heading="Nya produkter"
+            link="#"
+            visibleItems={6}
+            error={products.error}
+            loading={products.loading}
+          >
+            {products.data?.map((product: IProduct, i: number) => <ProductItem product={product} key={i} />)}
+          </ItemShelf>
+        </main>
+        <Footer />
+      </div>
+    </CompanyContext.Provider>
   );
 }

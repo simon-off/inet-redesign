@@ -34,9 +34,9 @@ export default function ItemShelf(props: IProps) {
   // State and ref for horizontal scrolling functionality
   const scrollRef = useRef<HTMLDivElement>(document.createElement("div"));
   const [scrollLocation, setScrollLocation] = useState<ScrollLocations>(ScrollLocations.Left);
-  const [screenWidth, setScreenWidth] = useState(0);
+  const [scollRefWidth, setScrollRefWidth] = useState(0);
 
-  useWindowResize(() => setScreenWidth(scrollRef.current?.offsetWidth));
+  useWindowResize(() => setScrollRefWidth(scrollRef.current?.offsetWidth));
 
   const handleScrollButtonClick = (direction: Direction) => {
     const ref = scrollRef.current;
@@ -60,7 +60,7 @@ export default function ItemShelf(props: IProps) {
   };
 
   const calculateGridAutoColumns = () => {
-    const columns = Math.floor(screenWidth / props.itemWidth);
+    const columns = Math.floor(scollRefWidth / props.itemWidth);
 
     return `calc((${100 / columns}% - ${GAP}px) + (${GAP}px / ${columns}))`;
   };

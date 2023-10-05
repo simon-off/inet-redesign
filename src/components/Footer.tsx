@@ -9,7 +9,7 @@ export default function Footer() {
       className={
         companyMode
           ? "border-t border-yellow-600 bg-white py-12 dark:bg-gray-800"
-          : "border-t border-gray-200 bg-white py-12 dark:border-gray-700 dark:bg-gray-800"
+          : "border-t bg-white py-12 dark:border-gray-700 dark:bg-gray-800"
       }
     >
       <div className="mx-auto max-w-screen-xl px-4 text-center font-mono">

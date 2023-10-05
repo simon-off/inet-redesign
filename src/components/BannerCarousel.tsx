@@ -60,7 +60,7 @@ export default function BannerCarousel() {
     <section className="relative flex items-center justify-center overflow-hidden md:mx-4 md:mt-8 md:rounded-md">
       <div
         ref={bannerContainerRef}
-        className="transition-translate flex h-full w-full"
+        className="flex h-full w-full transition-translate duration-300"
         style={{ translate: `-${page * 100}%` }}
       >
         <DrawBanners />

@@ -2,14 +2,12 @@ import { useEffect } from "react";
 
 export default function useWindowResize(action: () => void) {
   useEffect(() => {
-    const updateDimension = () => {
-      action();
-    };
-    updateDimension();
-    window.addEventListener("resize", updateDimension);
+    action();
+
+    window.addEventListener("resize", action);
 
     return () => {
-      window.removeEventListener("resize", updateDimension);
+      window.removeEventListener("resize", action);
     };
   }, [action]);
 }

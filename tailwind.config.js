@@ -27,6 +27,7 @@ export default {
       transitionProperty: {
         "max-height": "max-height",
         translate: "translate",
+        left: "left",
       },
     },
   },

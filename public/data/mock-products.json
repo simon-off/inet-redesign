@@ -1,10 +1,10 @@
 [
   {
-    "name": "Apple MacBook Pro 16-tums",
+    "name": "Apple MacBook Pro 16",
     "description": "En kraftfull bärbar dator för professionell användning",
     "text": "MacBook Pro 16-tums är en imponerande bärbar dator som är utformad för professionell användning. Den har en Intel Core i9-processor och AMD Radeon Pro 5500M-grafikkort som gör den kapabel att hantera de mest krävande uppgifterna. Dess 16-tums Retina-skärm ger en fantastisk visuell upplevelse. Den här datorn är idealisk för kreativa yrken och krävande arbetsuppgifter.",
     "price": 23990,
-    "image": "dell-xps.avif",
+    "image": "apple-macbook.webp",
     "specs": [
       { "Processor": "Intel Core i9" },
       { "Grafikkort": "AMD Radeon Pro 5500M" },
@@ -14,193 +14,11 @@
     ]
   },
   {
-    "name": "Dell XPS 13",
-    "description": "En kompakt och elegant ultrabook",
-    "text": "Dell XPS 13 är en kompakt och elegant ultrabook som är idealisk för användare som behöver en bärbar dator för produktivitet och underhållning. Den har en Intel Core i7-processor och en imponerande 13.4-tums InfinityEdge-touchskärm. Med 16 GB LPDDR4x RAM och 512 GB NVMe SSD-lagring är den snabb och responsiv.",
-    "price": 12990,
-    "image": "dell-xps.avif",
-    "specs": [
-      { "Processor": "Intel Core i7" },
-      { "Grafikkort": "Integrated Intel UHD Graphics" },
-      { "Minne": "16 GB LPDDR4x RAM" },
-      { "Lagring": "512 GB NVMe SSD" },
-      { "Skärm": "13.4-tums InfinityEdge-touchskärm" }
-    ]
-  },
-  {
-    "name": "Asus ROG Strix Scar 17",
-    "description": "En kraftfull gaming-laptop",
-    "text": "Asus ROG Strix Scar 17 är en kraftfull gaming-laptop som är utformad för att leverera hög prestanda i dina favoritspel. Den drivs av en AMD Ryzen 9 5900HX-processor och ett NVIDIA GeForce RTX 3080-grafikkort. Med 32 GB DDR4 RAM och en 17.3-tums Full HD 360Hz-skärm är den redo för intensivt spelande.",
-    "price": 21990,
-    "image": "dell-xps.avif",
-    "specs": [
-      { "Processor": "AMD Ryzen 9 5900HX" },
-      { "Grafikkort": "NVIDIA GeForce RTX 3080" },
-      { "Minne": "32 GB DDR4 RAM" },
-      { "Lagring": "1 TB NVMe SSD" },
-      { "Skärm": "17.3-tums Full HD 360Hz-skärm" }
-    ]
-  },
-  {
-    "name": "Samsung Galaxy S21 Ultra",
-    "description": "En kraftfull smartphone med avancerad kamera",
-    "text": "Samsung Galaxy S21 Ultra är en kraftfull smartphone som är utrustad med en avancerad kamera och en stor skärm. Den har en 108 MP huvudkamera och drivs av en Exynos 2100-processor (internationell version) eller Qualcomm Snapdragon 888 (USA-version). Med 12 GB RAM och 128 GB lagringsutrymme är den idealisk för fotografering och multitasking.",
-    "price": 12490,
-    "image": "dell-xps.avif",
-    "specs": [
-      { "Skärmstorlek": "6.8 tum Dynamic AMOLED 2X" },
-      { "Kamera": "108 MP huvudkamera" },
-      { "Processor": "Exynos 2100 (Internationell) / Qualcomm Snapdragon 888 (USA)" },
-      { "Minne": "12 GB RAM" },
-      { "Lagring": "128 GB lagring" }
-    ]
-  },
-  {
-    "name": "Sony PlayStation 5",
-    "description": "En spelkonsol med kraftfulla prestanda",
-    "text": "Sony PlayStation 5 är den senaste generationens spelkonsol som erbjuder kraftfulla prestanda och en imponerande spelupplevelse. Med en AMD Ryzen-processor och en anpassad AMD Radeon RDNA 2-grafik är den redo att köra de mest avancerade spel med högsta kvalitet.",
-    "price": 4990,
-    "image": "dell-xps.avif",
-    "specs": [
-      { "Processor": "AMD Ryzen-processor" },
-      { "Grafikkort": "Anpassad AMD Radeon RDNA 2" },
-      { "Minne": "16 GB GDDR6 RAM" },
-      { "Lagring": "825 GB NVMe SSD" },
-      { "Medföljande spel": "Demon's Souls" }
-    ]
-  },
-  {
-    "name": "Canon EOS 5D Mark IV",
-    "description": "En professionell DSLR-kamera för fotografering i hög kvalitet",
-    "text": "Canon EOS 5D Mark IV är en professionell DSLR-kamera som är utformad för fotografering i hög kvalitet. Med en 30.4 MP fullformatsensor och avancerad autofokus kan du fånga detaljerade och skarpa bilder. Den är idealisk för professionella fotografer och entusiaster som kräver prestanda.",
-    "price": 24990,
-    "image": "dell-xps.avif",
-    "specs": [
-      { "Sensor": "30.4 MP fullformatsensor" },
-      { "Autofokus": "61-punkts autofokussystem" },
-      { "Skärm": "3.2-tums pekskärm" },
-      { "Bildstabilisering": "Ja" },
-      { "Videoinspelning": "4K UHD" }
-    ]
-  },
-  {
-    "name": "LG OLED65CXPUA 65-tums 4K OLED TV",
-    "description": "En imponerande OLED-TV med fantastisk bildkvalitet",
-    "text": "LG OLED65CXPUA är en 65-tums 4K OLED TV som levererar en imponerande bildkvalitet med djupa svarta nivåer och levande färger. Den har inbyggd AI-teknik och stöder Dolby Vision och Dolby Atmos för en förstklassig visuell och ljudupplevelse.",
-    "price": 19990,
-    "image": "dell-xps.avif",
-    "specs": [
-      { "Skärmstorlek": "65 tum" },
-      { "Skärmteknik": "OLED" },
-      { "Upplösning": "4K Ultra HD" },
-      { "HDR-stöd": "Dolby Vision, HDR10, HLG" },
-      { "Ljud": "Dolby Atmos" }
-    ]
-  },
-  {
-    "name": "Bose QuietComfort 35 II Trådlösa Hörlurar",
-    "description": "Trådlösa hörlurar med brusreducering för en tyst lyssningsupplevelse",
-    "text": "Bose QuietComfort 35 II är trådlösa hörlurar som erbjuder en tyst lyssningsupplevelse med aktiv brusreduceringsteknik. De har en bekväm passform och kristallklart ljud. Perfekta för resor och att blockera ut omgivande ljud.",
-    "price": 2990,
-    "image": "dell-xps.avif",
-    "specs": [
-      { "Brusreducering": "Ja, aktiv brusreducering" },
-      { "Batteritid": "Upp till 20 timmar" },
-      { "Anslutning": "Trådlös Bluetooth" },
-      { "Mikrofon": "Inbyggd mikrofon" },
-      { "Färgalternativ": "Svart, Silver" }
-    ]
-  },
-  {
-    "name": "Nikon D850",
-    "description": "En professionell DSLR-kamera för avancerade fotografer",
-    "text": "Nikon D850 är en professionell DSLR-kamera som är utformad för avancerade fotografer som kräver hög bildkvalitet och prestanda. Med en 45.7 MP fullformatsensor och 153-punkts autofokussystem kan den hantera komplexa fotograferingssituationer.",
-    "price": 27990,
-    "image": "dell-xps.avif",
-    "specs": [
-      { "Sensor": "45.7 MP fullformatsensor" },
-      { "Autofokus": "153-punkts autofokussystem" },
-      { "Skärm": "3.2-tums pekskärm" },
-      { "Bildstabilisering": "Inbyggd bildstabilisering" },
-      { "Videoinspelning": "4K UHD" }
-    ]
-  },
-  {
-    "name": "Sony WH-1000XM4 Trådlösa Hörlurar",
-    "description": "Trådlösa hörlurar med brusreducering och hög ljudkvalitet",
-    "text": "Sony WH-1000XM4 är trådlösa hörlurar som erbjuder en imponerande ljudkvalitet och aktiv brusreducering. De har en lång batteritid och är perfekta för musikälskare och resenärer som vill njuta av musik utan störande ljud.",
-    "price": 3490,
-    "image": "dell-xps.avif",
-    "specs": [
-      { "Brusreducering": "Ja, aktiv brusreducering" },
-      { "Batteritid": "Upp till 30 timmar" },
-      { "Anslutning": "Trådlös Bluetooth" },
-      { "Mikrofon": "Inbyggd mikrofon" },
-      { "Färgalternativ": "Svart, Silver" }
-    ]
-  },
-  {
-    "name": "Amazon Echo Show 10",
-    "description": "En smart skärm med rörelseföljning",
-    "text": "Amazon Echo Show 10 är en smart skärm med en unik rörelseföljningsfunktion som följer dig när du pratar eller tittar på innehåll. Den har inbyggd Alexa-röstassistent och kan användas för att kontrollera smarta hem-enheter och visa information.",
-    "price": 2490,
-    "image": "dell-xps.avif",
-    "specs": [
-      { "Skärmstorlek": "10.1 tum" },
-      { "Rörelseföljning": "Ja" },
-      { "Röstassistent": "Alexa" },
-      { "Anslutning": "Trådlös Wi-Fi" },
-      { "Kamera": "13 MP kamera" }
-    ]
-  },
-  {
-    "name": "Sony Alpha a7 III",
-    "description": "En spegellös kamera med hög prestanda",
-    "text": "Sony Alpha a7 III är en spegellös kamera med hög prestanda som är idealisk för fotografer och videografer. Den har en 24.2 MP fullformatsensor och 693-punkts autofokussystem för snabb och exakt fokusering. Den är också kapabel att spela in 4K-video.",
-    "price": 19990,
-    "image": "dell-xps.avif",
-    "specs": [
-      { "Sensor": "24.2 MP fullformatsensor" },
-      { "Autofokus": "693-punkts autofokussystem" },
-      { "Skärm": "3-tums vinklingsbar pekskärm" },
-      { "Bildstabilisering": "Inbyggd bildstabilisering" },
-      { "Videoinspelning": "4K UHD" }
-    ]
-  },
-  {
-    "name": "Sony Alpha a6400",
-    "description": "En kompakt spegellös kamera för entusiaster",
-    "text": "Sony Alpha a6400 är en kompakt och mångsidig spegellös kamera som är perfekt för fotografering och videografering. Den har en 24.2 MP APS-C-sensor och 425-punkts fasdetekterande autofokussystem som ger snabb och exakt fokusering. Den är också kapabel att spela in 4K-video.",
-    "price": 9990,
-    "image": "dell-xps.avif",
-    "specs": [
-      { "Sensor": "24.2 MP APS-C-sensor" },
-      { "Autofokus": "425-punkts fasdetekterande autofokussystem" },
-      { "Skärm": "3-tums vinklingsbar pekskärm" },
-      { "Bildstabilisering": "Inbyggd bildstabilisering" },
-      { "Videoinspelning": "4K UHD" }
-    ]
-  },
-  {
-    "name": "Samsung QLED Q80T Series 65-tums TV",
-    "description": "En 4K QLED-TV med imponerande bildkvalitet",
-    "text": "Samsung QLED Q80T Series är en 65-tums 4K QLED-TV som levererar imponerande bildkvalitet med rika färger och hög ljusstyrka. Den har inbyggd Alexa-röststyrning och stöder HDR10+ för en förbättrad visuell upplevelse.",
-    "price": 14990,
-    "image": "dell-xps.avif",
-    "specs": [
-      { "Skärmstorlek": "65 tum" },
-      { "Skärmteknik": "QLED" },
-      { "Upplösning": "4K Ultra HD" },
-      { "HDR-stöd": "HDR10+" },
-      { "Röststyrning": "Inbyggd Alexa-röststyrning" }
-    ]
-  },
-  {
-    "name": "Canon EOS R5",
+    "name": "CANON Powershot G7 X",
     "description": "En spegellös kamera med hög upplösning och 8K-video",
-    "text": "Canon EOS R5 är en spegellös kamera med hög upplösning och avancerade videofunktioner. Den har en 45 MP fullformatsensor och kan spela in 8K-video med hög kvalitet. Den är idealisk för professionella fotografer och filmskapare.",
-    "price": 38990,
-    "image": "dell-xps.avif",
+    "text": "CANON Powershot G7 X är en spegellös kamera med hög upplösning och avancerade videofunktioner. Den har en 45 MP fullformatsensor och kan spela in 8K-video med hög kvalitet. Den är idealisk för professionella fotografer och filmskapare.",
+    "price": 7490,
+    "image": "canon-powershot.webp",
     "specs": [
       { "Sensor": "45 MP fullformatsensor" },
       { "Videoupplösning": "8K" },
@@ -210,27 +28,83 @@
     ]
   },
   {
-    "name": "Bose SoundLink Revolve+ Bluetooth-högtalare",
-    "description": "En bärbar Bluetooth-högtalare med 360-graders ljud",
-    "text": "Bose SoundLink Revolve+ är en bärbar Bluetooth-högtalare som levererar imponerande 360-graders ljud. Den har en lång batteritid och är vattentålig, vilket gör den idealisk för både inomhus- och utomhusanvändning. Den har också inbyggd mikrofon för handsfree-samtal.",
-    "price": 2990,
-    "image": "dell-xps.avif",
+    "name": "Samsung Galaxy S21 Ultra",
+    "description": "En kraftfull smartphone med avancerad kamera",
+    "text": "Samsung Galaxy S21 Ultra är en kraftfull smartphone som är utrustad med en avancerad kamera och en stor skärm. Den har en 108 MP huvudkamera och drivs av en Exynos 2100-processor (internationell version) eller Qualcomm Snapdragon 888 (USA-version). Med 12 GB RAM och 128 GB lagringsutrymme är den idealisk för fotografering och multitasking.",
+    "price": 12490,
+    "image": "samsung-galaxy-s21.webp",
     "specs": [
-      { "Ljudkvalitet": "360-graders ljud" },
-      { "Batteritid": "Upp till 17 timmar" },
-      { "Anslutning": "Trådlös Bluetooth" },
-      { "Vattentålighet": "Ja, IPX4-certifierad" },
-      { "Mikrofon": "Inbyggd mikrofon" }
+      { "Skärmstorlek": "6.8 tum Dynamic AMOLED 2X" },
+      { "Kamera": "108 MP huvudkamera" },
+      { "Processor": "Exynos 2100 (Internationell) / Qualcomm Snapdragon 888 (USA)" },
+      { "Minne": "12 GB RAM" },
+      { "Lagring": "128 GB lagring" }
     ]
   },
   {
-    "name": "LG CX Series 55-tums OLED TV",
-    "description": "En 4K OLED-TV med perfekta svarta nivåer",
-    "text": "LG CX Series är en 55-tums 4K OLED-TV som erbjuder perfekta svarta nivåer och levande färger. Den har inbyggd AI-teknik och stöder Dolby Vision och Dolby Atmos för en enastående visuell och ljudupplevelse. Den är också utrustad med NVIDIA G-SYNC för gaming.",
-    "price": 17990,
-    "image": "dell-xps.avif",
+    "name": "Dell XPS 13",
+    "description": "En kompakt och elegant ultrabook",
+    "text": "Dell XPS 13 är en kompakt och elegant ultrabook som är idealisk för användare som behöver en bärbar dator för produktivitet och underhållning. Den har en Intel Core i7-processor och en imponerande 13.4-tums InfinityEdge-touchskärm. Med 16 GB LPDDR4x RAM och 512 GB NVMe SSD-lagring är den snabb och responsiv.",
+    "price": 12990,
+    "image": "dell-xps.webp",
     "specs": [
-      { "Skärmstorlek": "55 tum" },
+      { "Processor": "Intel Core i7" },
+      { "Grafikkort": "Integrated Intel UHD Graphics" },
+      { "Minne": "16 GB LPDDR4x RAM" },
+      { "Lagring": "512 GB NVMe SSD" },
+      { "Skärm": "13.4-tums InfinityEdge-touchskärm" }
+    ]
+  },
+  {
+    "name": "JBL Live 660 Hörlurar",
+    "description": "Trådlösa hörlurar med brusreducering för en tyst lyssningsupplevelse",
+    "text": "JBL Live 660 är trådlösa hörlurar som erbjuder en tyst lyssningsupplevelse med aktiv brusreduceringsteknik. De har en bekväm passform och kristallklart ljud. Perfekta för resor och att blockera ut omgivande ljud.",
+    "price": 2990,
+    "image": "jbl-live.webp",
+    "specs": [
+      { "Brusreducering": "Ja, aktiv brusreducering" },
+      { "Batteritid": "Upp till 20 timmar" },
+      { "Anslutning": "Trådlös Bluetooth" },
+      { "Mikrofon": "Inbyggd mikrofon" },
+      { "Färgalternativ": "Svart, Silver" }
+    ]
+  },
+  {
+    "name": "Canon EOS R10 DSLR",
+    "description": "En professionell DSLR-kamera för fotografering i hög kvalitet",
+    "text": "Canon EOS R10 är en professionell DSLR-kamera som är utformad för fotografering i hög kvalitet. Med en 30.4 MP fullformatsensor och avancerad autofokus kan du fånga detaljerade och skarpa bilder. Den är idealisk för professionella fotografer och entusiaster som kräver prestanda.",
+    "price": 24990,
+    "image": "canon-eos.webp",
+    "specs": [
+      { "Sensor": "30.4 MP fullformatsensor" },
+      { "Autofokus": "61-punkts autofokussystem" },
+      { "Skärm": "3.2-tums pekskärm" },
+      { "Bildstabilisering": "Ja" },
+      { "Videoinspelning": "4K UHD" }
+    ]
+  },
+  {
+    "name": "Sony PlayStation 5",
+    "description": "En spelkonsol med kraftfulla prestanda",
+    "text": "Sony PlayStation 5 är den senaste generationens spelkonsol som erbjuder kraftfulla prestanda och en imponerande spelupplevelse. Med en AMD Ryzen-processor och en anpassad AMD Radeon RDNA 2-grafik är den redo att köra de mest avancerade spel med högsta kvalitet.",
+    "price": 4990,
+    "image": "sony-playstation.webp",
+    "specs": [
+      { "Processor": "AMD Ryzen-processor" },
+      { "Grafikkort": "Anpassad AMD Radeon RDNA 2" },
+      { "Minne": "16 GB GDDR6 RAM" },
+      { "Lagring": "825 GB NVMe SSD" },
+      { "Medföljande spel": "Demon's Souls" }
+    ]
+  },
+  {
+    "name": "LG 65-tums 4K OLED TV",
+    "description": "En imponerande OLED-TV med fantastisk bildkvalitet",
+    "text": "LG OLED65CXPUA är en 65-tums 4K OLED TV som levererar en imponerande bildkvalitet med djupa svarta nivåer och levande färger. Den har inbyggd AI-teknik och stöder Dolby Vision och Dolby Atmos för en förstklassig visuell och ljudupplevelse.",
+    "price": 19990,
+    "image": "lg-65.webp",
+    "specs": [
+      { "Skärmstorlek": "65 tum" },
       { "Skärmteknik": "OLED" },
       { "Upplösning": "4K Ultra HD" },
       { "HDR-stöd": "Dolby Vision, HDR10, HLG" },
@@ -238,11 +112,81 @@
     ]
   },
   {
-    "name": "Sony PlayStation 5 Digital Edition",
+    "name": "Panasonic Lumix GH6",
+    "description": "En professionell DSLR-kamera för avancerade fotografer",
+    "text": "Panasonic Lumix GH6 är en professionell DSLR-kamera som är utformad för avancerade fotografer som kräver hög bildkvalitet och prestanda. Med en 45.7 MP fullformatsensor och 153-punkts autofokussystem kan den hantera komplexa fotograferingssituationer.",
+    "price": 27990,
+    "image": "panasonic-lumix.webp",
+    "specs": [
+      { "Sensor": "45.7 MP fullformatsensor" },
+      { "Autofokus": "153-punkts autofokussystem" },
+      { "Skärm": "3.2-tums pekskärm" },
+      { "Bildstabilisering": "Inbyggd bildstabilisering" },
+      { "Videoinspelning": "4K UHD" }
+    ]
+  },
+  {
+    "name": "Sony WH-1000XM4",
+    "description": "Trådlösa hörlurar med brusreducering och hög ljudkvalitet",
+    "text": "Sony WH-1000XM4 är trådlösa hörlurar som erbjuder en imponerande ljudkvalitet och aktiv brusreducering. De har en lång batteritid och är perfekta för musikälskare och resenärer som vill njuta av musik utan störande ljud.",
+    "price": 3490,
+    "image": "sony-wh.webp",
+    "specs": [
+      { "Brusreducering": "Ja, aktiv brusreducering" },
+      { "Batteritid": "Upp till 30 timmar" },
+      { "Anslutning": "Trådlös Bluetooth" },
+      { "Mikrofon": "Inbyggd mikrofon" },
+      { "Färgalternativ": "Svart, Silver" }
+    ]
+  },
+  {
+    "name": "Samsung QLED 65 tum",
+    "description": "En 4K QLED-TV med imponerande bildkvalitet",
+    "text": "Samsung QLED Q80T Series är en 65-tums 4K QLED-TV som levererar imponerande bildkvalitet med rika färger och hög ljusstyrka. Den har inbyggd Alexa-röststyrning och stöder HDR10+ för en förbättrad visuell upplevelse.",
+    "price": 14990,
+    "image": "samsung-qled.webp",
+    "specs": [
+      { "Skärmstorlek": "65 tum" },
+      { "Skärmteknik": "QLED" },
+      { "Upplösning": "4K Ultra HD" },
+      { "HDR-stöd": "HDR10+" },
+      { "Röststyrning": "Inbyggd Alexa-röststyrning" }
+    ]
+  },
+  {
+    "name": "Sony Alpha a7 III",
+    "description": "En spegellös kamera med hög prestanda",
+    "text": "Sony Alpha a7 III är en spegellös kamera med hög prestanda som är idealisk för fotografer och videografer. Den har en 24.2 MP fullformatsensor och 693-punkts autofokussystem för snabb och exakt fokusering. Den är också kapabel att spela in 4K-video.",
+    "price": 19990,
+    "image": "sony-alpha-a7.webp",
+    "specs": [
+      { "Sensor": "24.2 MP fullformatsensor" },
+      { "Autofokus": "693-punkts autofokussystem" },
+      { "Skärm": "3-tums vinklingsbar pekskärm" },
+      { "Bildstabilisering": "Inbyggd bildstabilisering" },
+      { "Videoinspelning": "4K UHD" }
+    ]
+  },
+  {
+    "name": "Asus ROG Strix G15",
+    "description": "En kraftfull gaming-laptop",
+    "text": "Asus ROG Strix G15 är en kraftfull gaming-laptop som är utformad för att leverera hög prestanda i dina favoritspel. Den drivs av en AMD Ryzen 7 6800H-processor och ett NVIDIA GeForce RTX 3070 Ti-grafikkort. Med 16 GB DDR4 RAM och en 17.3-tums Full HD 300Hz-skärm är den redo för intensivt spelande.",
+    "price": 21990,
+    "image": "asus-rog.webp",
+    "specs": [
+      { "Processor": "AMD Ryzen 9 5900HX" },
+      { "Grafikkort": "NVIDIA GeForce RTX 3080" },
+      { "Minne": "32 GB DDR4 RAM" },
+      { "Lagring": "1 TB NVMe SSD" },
+      { "Skärm": "17.3-tums Full HD 360Hz-skärm" }
+    ]
+  },
+  {
+    "name": "Xbox Series X Konsol",
     "description": "En digital spelkonsol med kraftfulla prestanda",
-    "text": "Sony PlayStation 5 Digital Edition är den digitala versionen av den senaste generationens spelkonsol. Den har samma kraftfulla prestanda med en AMD Ryzen-processor och en anpassad AMD Radeon RDNA 2-grafik. Den levereras utan fysisk diskdrive och laddar spel digitalt.",
+    "text": "Sony PlayStation 5 Digital Edition är den kraftfullaste versionen av den senaste generationens spelkonsol. Den har samma kraftfull prestanda med en AMD Ryzen-processor och en anpassad AMD Radeon RDNA 2-grafik. Den levereras med 1TB lagringsutrymme och trådlös Xbox-kontroll.",
     "price": 4490,
-    "image": "dell-xps.avif",
+    "image": "xbox-series.webp",
     "specs": [
       { "Processor": "AMD Ryzen-processor" },
       { "Grafikkort": "Anpassad AMD Radeon RDNA 2" },
@@ -252,11 +196,67 @@
     ]
   },
   {
-    "name": "Samsung Galaxy Tab S7+",
+    "name": "JBL Charge 5 Högtalare",
+    "description": "En bärbar Bluetooth-högtalare med 360-graders ljud",
+    "text": "JBL Charge 5 är en bärbar Bluetooth-högtalare som levererar imponerande 360-graders ljud. Den har en lång batteritid och är vattentålig, vilket gör den idealisk för både inomhus- och utomhusanvändning. Den har också inbyggd mikrofon för handsfree-samtal.",
+    "price": 2990,
+    "image": "jbl-charge.webp",
+    "specs": [
+      { "Ljudkvalitet": "360-graders ljud" },
+      { "Batteritid": "Upp till 17 timmar" },
+      { "Anslutning": "Trådlös Bluetooth" },
+      { "Vattentålighet": "Ja, IPX4-certifierad" },
+      { "Mikrofon": "Inbyggd mikrofon" }
+    ]
+  },
+  {
+    "name": "Amazon Echo Show 10",
+    "description": "En smart skärm med rörelseföljning",
+    "text": "Amazon Echo Show 10 är en smart skärm med en unik rörelseföljningsfunktion som följer dig när du pratar eller tittar på innehåll. Den har inbyggd Alexa-röstassistent och kan användas för att kontrollera smarta hem-enheter och visa information.",
+    "price": 2490,
+    "image": "amazon-echo.webp",
+    "specs": [
+      { "Skärmstorlek": "10.1 tum" },
+      { "Rörelseföljning": "Ja" },
+      { "Röstassistent": "Alexa" },
+      { "Anslutning": "Trådlös Wi-Fi" },
+      { "Kamera": "13 MP kamera" }
+    ]
+  },
+  {
+    "name": "LG CX 55-tums OLED TV",
+    "description": "En 4K OLED-TV med perfekta svarta nivåer",
+    "text": "LG CX Series är en 55-tums 4K OLED-TV som erbjuder perfekta svarta nivåer och levande färger. Den har inbyggd AI-teknik och stöder Dolby Vision och Dolby Atmos för en enastående visuell och ljudupplevelse. Den är också utrustad med NVIDIA G-SYNC för gaming.",
+    "price": 17990,
+    "image": "lg-55.webp",
+    "specs": [
+      { "Skärmstorlek": "55 tum" },
+      { "Skärmteknik": "OLED" },
+      { "Upplösning": "4K Ultra HD" },
+      { "HDR-stöd": "Dolby Vision, HDR10, HLG" },
+      { "Ljud": "Dolby Atmos" }
+    ]
+  },
+  {
+    "name": "Sony Alpha a6400",
+    "description": "En kompakt spegellös kamera för entusiaster",
+    "text": "Sony Alpha a6400 är en kompakt och mångsidig spegellös kamera som är perfekt för fotografering och videografering. Den har en 24.2 MP APS-C-sensor och 425-punkts fasdetekterande autofokussystem som ger snabb och exakt fokusering. Den är också kapabel att spela in 4K-video.",
+    "price": 9990,
+    "image": "sony-alpha-a6400.webp",
+    "specs": [
+      { "Sensor": "24.2 MP APS-C-sensor" },
+      { "Autofokus": "425-punkts fasdetekterande autofokussystem" },
+      { "Skärm": "3-tums vinklingsbar pekskärm" },
+      { "Bildstabilisering": "Inbyggd bildstabilisering" },
+      { "Videoinspelning": "4K UHD" }
+    ]
+  },
+  {
+    "name": "Samsung Galaxy Tab S9",
     "description": "En kraftfull Android-surfplatta med S Pen-stöd",
-    "text": "Samsung Galaxy Tab S7+ är en kraftfull Android-surfplatta som är idealisk för produktivitet och underhållning. Den har en imponerande 12.4-tums Super AMOLED-skärm och stöd för Samsungs S Pen, vilket gör den perfekt för skissning och anteckningar. Den har också en kraftfull Qualcomm Snapdragon 865+ processor.",
+    "text": "Samsung Galaxy Tab S9 är en kraftfull Android-surfplatta som är idealisk för produktivitet och underhållning. Den har en imponerande 12.4-tums Super AMOLED-skärm och stöd för Samsungs S Pen, vilket gör den perfekt för skissning och anteckningar. Den har också en kraftfull Qualcomm Snapdragon 865+ processor.",
     "price": 8490,
-    "image": "dell-xps.avif",
+    "image": "samsung-galaxy-tab.webp",
     "specs": [
       { "Skärmstorlek": "12.4 tum Super AMOLED" },
       { "Processor": "Qualcomm Snapdragon 865+" },
@@ -266,11 +266,11 @@
     ]
   },
   {
-    "name": "Logitech MX Master 3 Trådlös Mus",
+    "name": "Logitech MX Master 3",
     "description": "En avancerad trådlös mus för produktivitet",
     "text": "Logitech MX Master 3 är en avancerad trådlös mus som är utformad för produktivitet. Den har en ergonomisk design och anpassningsbara knappar för att effektivisera arbetsflödet. Den har också en snabb rullningsfunktion och kan anslutas till flera enheter samtidigt.",
     "price": 990,
-    "image": "dell-xps.avif",
+    "image": "logitech-mx.webp",
     "specs": [
       { "Anslutning": "Trådlös Bluetooth" },
       { "Scrollhjul": "Ja, med snabb rullning" },

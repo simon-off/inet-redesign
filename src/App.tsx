@@ -49,6 +49,15 @@ export default function App() {
   const products = useFetch<IProduct[]>("data/mock-products.json");
   const [companyMode, setCompanyMode] = useLocalStorage("companyMode", false);
 
+  // Shuffling mock data for the different sections
+  const reversed = products.data ? [...products.data].reverse() : null;
+  const shifted = products.data
+    ? [
+        ...[...products.data].splice(Math.floor(products.data.length / 2)),
+        ...products.data.slice(0, Math.floor(products.data.length / 2)),
+      ]
+    : null;
+
   return (
     <CompanyContext.Provider value={{ companyMode: companyMode, setCompanyMode: setCompanyMode }}>
       <div className="flex min-h-[100dvh] flex-col bg-gray-100 bg-[auto_100px] bg-no-repeat text-gray-800 dark:bg-gray-900 dark:text-gray-200">
@@ -64,10 +73,10 @@ export default function App() {
             {products.data?.map((product: IProduct, i: number) => <ProductItem product={product} key={i} />)}
           </ItemShelf>
           <ItemShelf heading="Topplistan" link="#" itemWidth={250} error={products.error} loading={products.loading}>
-            {products.data?.map((product: IProduct, i: number) => <ProductItem product={product} key={i} />)}
+            {shifted?.map((product: IProduct, i: number) => <ProductItem product={product} key={i} />)}
           </ItemShelf>
           <ItemShelf heading="Nya produkter" link="#" itemWidth={180} error={products.error} loading={products.loading}>
-            {products.data?.map((product: IProduct, i: number) => <ProductItem product={product} key={i} />)}
+            {reversed?.map((product: IProduct, i: number) => <ProductItem product={product} key={i} />)}
           </ItemShelf>
         </main>
         <Footer />

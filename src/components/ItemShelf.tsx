@@ -1,9 +1,10 @@
 import { StepForward, StepBack } from "lucide-react";
-import { ReactNode, useEffect, useRef, useState } from "react";
+import { ReactNode, useRef, useState } from "react";
 import SectionError from "./SectionError";
 import SectionLoading from "./SectionLoading";
 import ItemShelfButton from "./ItemShelfButton";
 import Direction from "../types/Direction";
+import useWindowResize from "../hooks/useWindowResize";
 
 enum ScrollLocations {
   Left,
@@ -35,18 +36,7 @@ export default function ItemShelf(props: IProps) {
   const [scrollLocation, setScrollLocation] = useState<ScrollLocations>(ScrollLocations.Left);
   const [screenWidth, setScreenWidth] = useState(0);
 
-  // Add event listener to update screenWidth state
-  useEffect(() => {
-    const updateDimension = () => {
-      setScreenWidth(scrollRef.current.offsetWidth);
-    };
-    updateDimension();
-    window.addEventListener("resize", updateDimension);
-
-    return () => {
-      window.removeEventListener("resize", updateDimension);
-    };
-  }, []);
+  useWindowResize(() => setScreenWidth(scrollRef.current?.offsetWidth));
 
   const handleScrollButtonClick = (direction: Direction) => {
     const ref = scrollRef.current;

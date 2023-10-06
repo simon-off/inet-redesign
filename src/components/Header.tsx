@@ -23,7 +23,10 @@ const CONTACT_LINKS = [
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [windowHeight, setWindowHeight] = useState(0);
-  const [darkMode, setDarkMode] = useLocalStorage("darkMode", false);
+  const [darkMode, setDarkMode] = useLocalStorage(
+    "darkMode",
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  );
   const { companyMode, setCompanyMode } = useContext(CompanyContext);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const headerRef = useRef<HTMLElement>(null);
@@ -137,7 +140,7 @@ export default function Header() {
         </div>
 
         <div
-          className="transition-left top-full z-10 border-y bg-white text-sm shadow-lg dark:border-gray-700 dark:bg-gray-800 max-md:absolute max-md:w-[400px] max-md:max-w-[80%] max-md:border-r"
+          className="top-full z-10 border-y bg-white text-sm shadow-lg transition-left dark:border-gray-700 dark:bg-gray-800 max-md:absolute max-md:w-[400px] max-md:max-w-[80%] max-md:border-r"
           style={{
             borderColor: `${companyMode ? "#d97706" : ""}`,
             left: `${menuOpen ? "0" : "-100%"}`,

@@ -60,7 +60,10 @@ export default function ItemShelf(props: IProps) {
   };
 
   const calculateGridAutoColumns = () => {
-    const columns = Math.floor(scollRefWidth / props.itemWidth);
+    let columns = Math.floor(scollRefWidth / props.itemWidth);
+    if (scollRefWidth < 640) {
+      columns = Math.floor(scollRefWidth / (props.itemWidth * 0.9));
+    }
 
     return `calc((${100 / columns}% - ${GAP}px) + (${GAP}px / ${columns}))`;
   };
@@ -80,13 +83,11 @@ export default function ItemShelf(props: IProps) {
   return (
     <section className="px-4">
       <div className="flex items-center justify-between gap-4 pb-2 font-mono uppercase">
-        <a href={props.link}>
+        <a>
           <h2 className="link font-semibold uppercase opacity-80 hover:opacity-100">{props.heading}</h2>
         </a>
         <div className="h-[1px] flex-1 bg-gray-400 bg-opacity-30"></div>
-        <a href={props.link} className="link text-sm">
-          Visa alla
-        </a>
+        <a className="link text-sm">Visa alla</a>
       </div>
       <div className="relative">
         <div

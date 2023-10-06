@@ -15,15 +15,17 @@ import {
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ItemShelf from "./components/ItemShelf";
-import ProductItem from "./components/cards/ProductCard";
+import ProductCard from "./components/cards/ProductCard";
 import useFetch from "./hooks/useFetch";
 import IProduct from "./types/IProduct";
 import CategoryItem from "./components/cards/CategoryCard";
-import ICategory from "./types/IProduct copy";
+import ICategory from "./types/ICategory";
 import ItemDrawer from "./components/ItemDrawer";
 import BannerCarousel from "./components/BannerCarousel";
 import useLocalStorage from "./hooks/useLocalStorage";
 import { createContext } from "react";
+import IArticle from "./types/IArticle";
+import ArticleCard from "./components/cards/ArticleCard";
 
 const CATEGORIES = [
   { name: "Datorer", icon: <Computer size={48} absoluteStrokeWidth strokeWidth={1.5} /> },
@@ -47,6 +49,7 @@ export const CompanyContext = createContext<{
 
 export default function App() {
   const products = useFetch<IProduct[]>("data/mock-products.json");
+  const articles = useFetch<IArticle[]>("data/mock-articles.json");
   const [companyMode, setCompanyMode] = useLocalStorage("companyMode", false);
 
   // Shuffling mock data for the different sections
@@ -70,13 +73,16 @@ export default function App() {
             ))}
           </ItemDrawer>
           <ItemShelf heading="Kampanjer" link="#" itemWidth={210} error={products.error} loading={products.loading}>
-            {products.data?.map((product: IProduct, i: number) => <ProductItem product={product} key={i} />)}
+            {products.data?.map((product: IProduct, i: number) => <ProductCard product={product} key={i} />)}
           </ItemShelf>
           <ItemShelf heading="Topplistan" link="#" itemWidth={250} error={products.error} loading={products.loading}>
-            {shifted?.map((product: IProduct, i: number) => <ProductItem product={product} key={i} />)}
+            {shifted?.map((product: IProduct, i: number) => <ProductCard product={product} key={i} />)}
           </ItemShelf>
           <ItemShelf heading="Nya produkter" link="#" itemWidth={180} error={products.error} loading={products.loading}>
-            {reversed?.map((product: IProduct, i: number) => <ProductItem product={product} key={i} />)}
+            {reversed?.map((product: IProduct, i: number) => <ProductCard product={product} key={i} />)}
+          </ItemShelf>
+          <ItemShelf heading="Nyheter" link="#" itemWidth={250} error={articles.error} loading={articles.loading}>
+            {articles.data?.map((article: IArticle, i: number) => <ArticleCard article={article} key={i} />)}
           </ItemShelf>
         </main>
         <Footer />

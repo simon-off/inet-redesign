@@ -1,60 +1,70 @@
 [
   {
     "image": "article1.webp",
+    "alt": "Datorskärm med prestanda-grafer",
     "title": "Inots Tech-tips",
     "description": "Lär dig användbara tech-tips och tricks från Inots experter.",
     "date": "2023-10-23"
   },
   {
     "image": "article6.webp",
+    "alt": "Logitech Gaming-mus",
     "title": "Gaming-tillbehör i överflöd",
     "description": "Utforska ett brett utbud av gaming-tillbehör hos Inot.",
     "date": "2023-10-12"
   },
   {
     "image": "article3.webp",
+    "alt": "Man med VR-headset som ser redo ut",
     "title": "VR-headsetrevolutionen",
     "description": "Upplev framtiden med dessa uppslukande VR-headset.",
     "date": "2023-10-07"
   },
   {
     "image": "article4.webp",
+    "alt": "Stort gaming-grafikkort",
     "title": "Speländrande GPU:er",
     "description": "Dessa kraftfulla GPU:er omdefinierar spelupplevelsen.",
     "date": "2023-10-08"
   },
   {
     "image": "article5.webp",
+    "alt": "Skylt med texten SALE i fönster",
     "title": "Inots årliga rea",
     "description": "Miss inte chansen till stora rabatter under vår årliga rea!",
     "date": "2023-10-10"
   },
   {
     "image": "article2.webp",
+    "alt": "Desktop-dator med RGB-ljus",
     "title": "Nya speldatorer",
     "description": "Framtidens speldatorer är äntligen här!",
     "date": "2023-10-06"
   },
   {
     "image": "article7.webp",
+    "alt": "5 personer med laptops vid matbord",
     "title": "Tech-entusiaster förenas",
     "description": "Gå med i vår gemenskap av tech-entusiaster och håll dig uppdaterad.",
     "date": "2023-10-15"
   },
   {
     "image": "article8.webp",
+    "alt": "Laptop-tangentbord med ett öppet hänglås på",
     "title": "Inots Exklusiva Medlemskap",
     "description": "Få tillgång till exklusiva förmåner med Inots premiummedlemskapsprogram.",
     "date": "2023-10-18"
   },
   {
     "image": "article9.webp",
+    "alt": "Gul brevlåda på tegelvägg",
     "title": "Håll dig uppdaterad med Inot",
     "description": "Prenumerera på vårt nyhetsbrev för de senaste tech-nyheterna.",
     "date": "2023-10-20"
   },
   {
     "image": "article10.webp",
+    "alt": "Glad man med spelkontroll framför datorskärm",
     "title": "Inots Kunduppskattningdag",
     "description": "Gå med oss för en speciell dag dedikerad till våra lojala kunder.",
     "date": "2023-10-25"

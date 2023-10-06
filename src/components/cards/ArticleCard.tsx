@@ -7,7 +7,7 @@ export default function ArticleCard({ article }: { article: IArticle }) {
         <div className="h-48">
           <img
             src={`images/articles/${article.image}`}
-            alt={article.title}
+            alt={article.alt}
             className="mx-auto h-full w-full object-cover"
           />
         </div>

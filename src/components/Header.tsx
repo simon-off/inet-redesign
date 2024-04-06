@@ -15,9 +15,9 @@ const NAV_LINKS = [
   { innerText: "Guider", href: "#" },
 ] as const;
 const CONTACT_LINKS = [
-  { innerText: "404-12-55-00", href: "tel:404-12-55-00", icon: <Phone size={16} /> },
+  { innerText: "404-12-55-00", href: "#", icon: <Phone size={16} /> },
   { innerText: "Chatt", href: "#", icon: <MessageSquare size={16} /> },
-  { innerText: "info@inot.se", href: "mailto:info@inot.se", icon: <Mail size={16} /> },
+  { innerText: "info@inot.se", href: "#", icon: <Mail size={16} /> },
 ] as const;
 
 export default function Header() {

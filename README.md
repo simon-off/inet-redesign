@@ -2,7 +2,7 @@
 
 AKA _**INOT**_
 
-Preview on Netlify: [Inet Redesign](https://inet-redesign.netlify.app/)
+[inot.simonoff.se/](https://inot.simonoff.se/)
 
 ---
 
